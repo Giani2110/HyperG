@@ -11,7 +11,7 @@ import {
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-function LandingPage() {
+function Home() {
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -30,18 +30,18 @@ function LandingPage() {
         <div className="absolute inset-0 bg-black opacity-70 z-10"></div>
         <div className="absolute inset-0 flex items-center justify-start pl-16 z-20">
           <div className="text-left" data-aos="fade-right">
-            {" "}
-            {/* Animación de desvanecimiento desde la derecha */}
+
             <h1 className="text-4xl font-extrabold text-white mb-4">HyperG</h1>
             <p className="text-xl text-white mb-6 max-w-lg">
               La plataforma de juegos en la que disfrutarás sin limitaciones.
             </p>
           </div>
         </div>
+
         <img
           src="img/banner.jpg"
           alt="banner"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center z-0 opacity-50 absolute inset-0"
         />
       </section>
 
@@ -141,4 +141,4 @@ function LandingPage() {
   );
 }
 
-export default LandingPage;
+export default Home;
