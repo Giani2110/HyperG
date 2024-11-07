@@ -1,24 +1,43 @@
-// src/pages/login/Login.jsx
-import React, { useState } from "react";
-import { TextField, Button, Box, Container, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSignInAlt } from "@fortawesome/free-solid-svg-icons";
-import { motion } from "framer-motion";
-
+import React, { useState } from 'react';
+import { Button, TextField, Typography, Box, Container } from '@mui/material';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (!email || !password) {
-      setError("Por favor ingresa tu email y contraseña");
+      toast.error("Por favor ingresa tu email y contraseña");
       return;
     }
-    console.log("Iniciando sesión...", { email, password });
+
+    try {
+      const response = await fetch("http://localhost:5000/users");
+      const data = await response.json();
+      const user = data.find(
+        (user) => user.email === email && user.password === password
+      );
+
+      if (!user) {
+        toast.error("Correo electrónico o contraseña incorrectos");  // Alerta de error
+        return;
+      }
+
+      toast.success("¡Inicio de sesión exitoso!");
+
+      console.log("Usuario logueado:", user);
+    } catch (error) {
+      console.error("Error al hacer la solicitud:", error);
+      toast.error("Hubo un error al conectar con el servidor");
+    }
   };
 
   return (
@@ -30,22 +49,10 @@ function Login() {
           transition={{ duration: 0.6 }}
         >
           <Typography variant="h4" className="text-white text-center mb-4">
-          <FontAwesomeIcon icon={faSignInAlt} className="mr-2" />
-          Iniciar sesión
+            <FontAwesomeIcon icon={faSignInAlt} className="mr-2" />
+            Iniciar sesión
           </Typography>
         </motion.div>
-
-        {error && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4 }}
-          >
-            <Typography variant="body2" color="error" className="mb-4">
-              {error}
-            </Typography>
-          </motion.div>
-        )}
 
         <form onSubmit={handleSubmit}>
           <motion.div
@@ -141,6 +148,8 @@ function Login() {
             </Typography>
           </Box>
         </form>
+
+        <ToastContainer />
       </Container>
     </div>
   );
