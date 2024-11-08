@@ -49,6 +49,7 @@ function Register() {
       username,
       email,
       password,
+      type: "client",
     };
 
     try {

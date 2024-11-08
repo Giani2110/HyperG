@@ -1,8 +1,16 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStore, faBook, faUser, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+import { useAuth } from "../../context/AuthContext";
 
 function UserHeader() {
+  const { logout } = useAuth();
+
+  const handleLogout = (e) => {
+    e.preventDefault();
+    logout();
+  };
+
   return (
     <header className="bg-gray-900 text-white p-4 shadow-md w-full fixed top-0 left-0 z-50">
       <div className="container mx-auto flex justify-between items-center">
@@ -35,6 +43,7 @@ function UserHeader() {
           <a
             href="#logout"
             className="flex items-center space-x-2 px-4 py-2 rounded bg-red-600 hover:bg-red-500 transition-colors duration-200 text-base"
+            onClick={handleLogout}
           >
             <FontAwesomeIcon icon={faSignOutAlt} />
             <span>Cerrar sesión</span>

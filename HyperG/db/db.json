@@ -1,5 +1,18 @@
 {
   "users": [
-    
+    {
+      "id": "4012",
+      "username": "Giani",
+      "email": "Giani@gmail.com",
+      "password": "Giani1234",
+      "type": "client"
+    },
+    {
+      "id": "45bf",
+      "username": "Lopez",
+      "email": "Lopez@Lopez.Lopez",
+      "password": "Lopez123",
+      "type": "client"
+    }
   ]
 }
