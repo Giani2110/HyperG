@@ -5,6 +5,7 @@ import Home from './pages/home/home.jsx';
 import Login from './pages/login/login.jsx';
 import Register from './pages/register/register.jsx';
 import Catalog from './pages/catalog/catalog.jsx';
+import Library from './pages/library/library.jsx';
 import LandingLayout from './layout/LandingLayout.jsx';
 import UserLayout from './layout/UserLayout.jsx';
 import { AuthProvider } from './context/AuthContext';
@@ -23,14 +24,16 @@ function App() {
                 <Route path="/register" element={<Register />} />
               </Route>
 
-              <Route element={<UserLayout/>}>
-                <Route path="/catalog" element={ <ProtectedRoute allowedRoles={['client']}> <Catalog /> </ProtectedRoute> } />
+              <Route element={<UserLayout />}>
+                <Route path="/catalog" element={<ProtectedRoute allowedRoles={['client']}><Catalog /></ProtectedRoute>} />
+                <Route path="/library" element={<ProtectedRoute allowedRoles={['client']}><Library /></ProtectedRoute>} />
               </Route>
             </Routes>
           </main>
         </div>
       </Router>
     </AuthProvider>
+
   );
 }
 

@@ -33,11 +33,30 @@ function Catalog() {
   return (
     <div className="bg-gray-900 min-h-screen py-8" style={{ marginTop: "80px" }}>
       <div className="max-w-screen-xl mx-auto px-4">
-        <h4 className="text-white text-center mb-12 mt-12 text-2xl font-bold">Catálogo de Juegos</h4>
+        <motion.h4
+          className="text-white text-center mb-12 mt-12 text-2xl font-bold"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+        >
+          Catálogo de Juegos
+        </motion.h4>
 
         <div className="flex gap-8">
-          <div className="bg-gray-800 p-6 rounded-md w-1/4 space-y-6 sticky top-24 z-10 h-[500px] overflow-y-auto">
-            <h6 className="text-white mb-4 text-lg font-semibold">Filtros</h6>
+          <motion.div
+            className="bg-gray-800 p-6 rounded-md w-1/4 space-y-6 sticky top-24 z-10 h-[500px] overflow-y-auto"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <motion.h6
+              className="text-white mb-4 text-lg font-semibold"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              Filtros
+            </motion.h6>
 
             <div className="relative">
               <input
@@ -92,6 +111,7 @@ function Catalog() {
                 className="bg-gray-700 text-white p-3 pl-10 w-full rounded-md focus:outline-none focus:ring-2 focus:ring-green-600 transition duration-300"
               >
                 <option value="" disabled>Selecciona Precio</option>
+                <option value="0-0">Gratis</option>
                 <option value="0-20">Hasta $20</option>
                 <option value="20-50">$20 a $50</option>
                 <option value="50+">Más de $50</option>
@@ -106,7 +126,7 @@ function Catalog() {
                 Limpiar Filtros
               </button>
             </div>
-          </div>
+          </motion.div>
 
           <div className="flex-grow">
             <div className="space-y-8">
@@ -117,6 +137,7 @@ function Catalog() {
                     (genre === "" || game.genre === genre) &&
                     (platform === "" || game.platform === platform) &&
                     (price === "" || (
+                      (price === "0-0" && game.price === "Free") ||
                       (price === "0-20" && parseFloat(game.price.slice(1)) <= 20) ||
                       (price === "20-50" && parseFloat(game.price.slice(1)) > 20 && parseFloat(game.price.slice(1)) <= 50) ||
                       (price === "50+" && parseFloat(game.price.slice(1)) > 50)
@@ -126,14 +147,19 @@ function Catalog() {
                 .map((game) => (
                   <motion.div
                     key={game.id}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.4 }}
                     className="bg-gray-800 text-white p-6 rounded-md shadow-lg"
                   >
                     <div className="flex items-center justify-between space-x-4">
                       <img className="w-32 h-32 object-cover rounded-md" src={game.img} alt={game.title} />
-                      <div className="flex flex-col justify-between w-full">
+                      <motion.div
+                        className="flex flex-col justify-between w-full"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.5 }}
+                      >
                         <h5 className="text-white font-semibold text-xl">{game.title}</h5>
                         <div className="text-gray-400 text-sm">
                           <span className="block">Género: {game.genre}</span>
@@ -145,11 +171,16 @@ function Catalog() {
                             {game.rating}
                           </span>
                         </div>
-                      </div>
-                      <button className="flex items-center bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-md mt-6 self-center">
+                      </motion.div>
+                      <motion.button
+                        className="flex items-center bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-md mt-6 self-center"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.6 }}
+                      >
                         <FontAwesomeIcon icon={faShoppingCart} className="mr-2" />
                         Comprar - {game.price}
-                      </button>
+                      </motion.button>
                     </div>
                   </motion.div>
                 ))}

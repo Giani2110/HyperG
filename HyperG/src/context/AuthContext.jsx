@@ -1,20 +1,32 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true); // Estado para saber si estamos cargando el usuario
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+    setLoading(false);
+  }, []);
 
   const login = (userData) => {
+    console.log("Saving user data:", userData);
     setUser(userData);
+    localStorage.setItem('user', JSON.stringify(userData));
   };
 
   const logout = () => {
-    setUser(null); 
+    setUser(null);
+    localStorage.removeItem('user');
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, login, logout, loading }}>
       {children}
     </AuthContext.Provider>
   );

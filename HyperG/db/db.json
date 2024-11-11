@@ -5,15 +5,308 @@
       "username": "Giani",
       "email": "Giani@gmail.com",
       "password": "Giani1234",
-      "type": "client"
+      "type": "client",
+      "library": [
+        {
+          "id": 1,
+          "title": "Cyberpunk 2077",
+          "genre": "RPG",
+          "price": "$29.99",
+          "rating": 4.5,
+          "platform": "PC",
+          "img": "https://placehold.co/150x200"
+        }
+      ]
+    },
+    {
+      "id": "cc02",
+      "username": "Gero",
+      "email": "Gero@gmail.com",
+      "password": "Gero1234",
+      "type": "client",
+      "library": [
+        {
+          "id": 2,
+          "title": "The Witcher 3",
+          "genre": "RPG",
+          "price": "$19.99",
+          "rating": 4.8,
+          "platform": "PC",
+          "img": "https://placehold.co/150x200"
+        }
+      ]
     }
   ],
   "games": [
-    { "id": 1, "title": "Cyberpunk 2077", "genre": "RPG", "price": "$29.99", "rating": 4.5, "platform": "PC", "img": "https://placehold.co/150x200" },
-    { "id": 2, "title": "The Witcher 3", "genre": "RPG", "price": "$19.99", "rating": 4.8, "platform": "PC", "img": "https://placehold.co/150x200" },
-    { "id": 3, "title": "Red Dead Redemption 2", "genre": "Action", "price": "$39.99", "rating": 4.6, "platform": "Console", "img": "https://placehold.co/150x200" },
-    { "id": 4, "title": "Elden Ring", "genre": "Adventure", "price": "$59.99", "rating": 4.9, "platform": "Console", "img": "https://placehold.co/150x200" },
-    { "id": 5, "title": "The Last of Us", "genre": "Action", "price": "$49.99", "rating": 4.7, "platform": "Console", "img": "https://placehold.co/150x200" },
-    { "id": 6, "title": "Rocket League", "genre": "Sports", "price": "$19.99", "rating": 4.5, "platform": "Console", "img": "https://placehold.co/150x200" }
+    {
+      "id": 1,
+      "title": "Cyberpunk 2077",
+      "genre": "RPG",
+      "price": "$29.99",
+      "rating": 4.5,
+      "platform": "PC",
+      "img": "https://placehold.co/150x200"
+    },
+    {
+      "id": 2,
+      "title": "The Witcher 3",
+      "genre": "RPG",
+      "price": "$19.99",
+      "rating": 4.8,
+      "platform": "PC",
+      "img": "https://placehold.co/150x200"
+    },
+    {
+      "id": 3,
+      "title": "Red Dead Redemption 2",
+      "genre": "Action",
+      "price": "$39.99",
+      "rating": 4.6,
+      "platform": "Console",
+      "img": "https://placehold.co/150x200"
+    },
+    {
+      "id": 4,
+      "title": "Elden Ring",
+      "genre": "Adventure",
+      "price": "$59.99",
+      "rating": 4.9,
+      "platform": "Console",
+      "img": "https://placehold.co/150x200"
+    },
+    {
+      "id": 5,
+      "title": "The Last of Us",
+      "genre": "Action",
+      "price": "$49.99",
+      "rating": 4.7,
+      "platform": "Console",
+      "img": "https://placehold.co/150x200"
+    },
+    {
+      "id": 6,
+      "title": "Rocket League",
+      "genre": "Sports",
+      "price": "Free",
+      "rating": 4.5,
+      "platform": "Console",
+      "img": "https://placehold.co/150x200"
+    },
+    {
+      "id": 7,
+      "title": "Grand Theft Auto V",
+      "genre": "Action",
+      "price": "$19.99",
+      "rating": 4.8,
+      "platform": "PC",
+      "img": "https://placehold.co/150x200"
+    },
+    {
+      "id": 8,
+      "title": "The Legend of Zelda: Breath of the Wild",
+      "genre": "Adventure",
+      "price": "$59.99",
+      "rating": 4.9,
+      "platform": "Console",
+      "img": "https://placehold.co/150x200"
+    },
+    {
+      "id": 9,
+      "title": "The Witcher 3: Wild Hunt",
+      "genre": "RPG",
+      "price": "$29.99",
+      "rating": 4.7,
+      "platform": "PC",
+      "img": "https://placehold.co/150x200"
+    },
+    {
+      "id": 10,
+      "title": "The Legend of Zelda: Tears of the Kingdom",
+      "genre": "Adventure",
+      "price": "$49.99",
+      "rating": 4.6,
+      "platform": "Console",
+      "img": "https://placehold.co/150x200"
+    },
+    {
+      "id": 11,
+      "title": "Minecraft",
+      "genre": "Adventure",
+      "price": "$26.99",
+      "rating": 4.9,
+      "platform": "PC",
+      "img": "https://placehold.co/150x200"
+    },
+    {
+      "id": 12,
+      "title": "Apex Legends",
+      "genre": "Shooter",
+      "price": "Free",
+      "rating": 4.7,
+      "platform": "PC",
+      "img": "https://placehold.co/150x200"
+    },
+    {
+      "id": 13,
+      "title": "FIFA 23",
+      "genre": "Sports",
+      "price": "$59.99",
+      "rating": 4.4,
+      "platform": "Console",
+      "img": "https://placehold.co/150x200"
+    },
+    {
+      "id": 14,
+      "title": "Fortnite",
+      "genre": "Shooter",
+      "price": "Free",
+      "rating": 4.6,
+      "platform": "Console",
+      "img": "https://placehold.co/150x200"
+    },
+    {
+      "id": 15,
+      "title": "Among Us",
+      "genre": "Multiplayer",
+      "price": "$4.99",
+      "rating": 4.3,
+      "platform": "PC",
+      "img": "https://placehold.co/150x200"
+    },
+    {
+      "id": 16,
+      "title": "Call of Duty: Warzone",
+      "genre": "Shooter",
+      "price": "Free",
+      "rating": 4.5,
+      "platform": "PC",
+      "img": "https://placehold.co/150x200"
+    },
+    {
+      "id": 17,
+      "title": "Super Mario Odyssey",
+      "genre": "Adventure",
+      "price": "$49.99",
+      "rating": 4.8,
+      "platform": "Console",
+      "img": "https://placehold.co/150x200"
+    },
+    {
+      "id": 18,
+      "title": "Overwatch 2",
+      "genre": "Shooter",
+      "price": "Free",
+      "rating": 4.4,
+      "platform": "PC",
+      "img": "https://placehold.co/150x200"
+    },
+    {
+      "id": 19,
+      "title": "Hades",
+      "genre": "Rogue-like",
+      "price": "$24.99",
+      "rating": 4.8,
+      "platform": "PC",
+      "img": "https://placehold.co/150x200"
+    },
+    {
+      "id": 20,
+      "title": "Valorant",
+      "genre": "Shooter",
+      "price": "Free",
+      "rating": 4.7,
+      "platform": "PC",
+      "img": "https://placehold.co/150x200"
+    },
+    {
+      "id": 21,
+      "title": "Ghost of Tsushima",
+      "genre": "Action",
+      "price": "$59.99",
+      "rating": 4.9,
+      "platform": "Console",
+      "img": "https://placehold.co/150x200"
+    },
+    {
+      "id": 22,
+      "title": "Animal Crossing: New Horizons",
+      "genre": "Simulation",
+      "price": "$59.99",
+      "rating": 4.8,
+      "platform": "Console",
+      "img": "https://placehold.co/150x200"
+    },
+    {
+      "id": 23,
+      "title": "Genshin Impact",
+      "genre": "RPG",
+      "price": "Free",
+      "rating": 4.6,
+      "platform": "PC",
+      "img": "https://placehold.co/150x200"
+    },
+    {
+      "id": 24,
+      "title": "Minecraft Dungeons",
+      "genre": "Action",
+      "price": "$19.99",
+      "rating": 4.5,
+      "platform": "Console",
+      "img": "https://placehold.co/150x200"
+    },
+    {
+      "id": 25,
+      "title": "Sekiro: Shadows Die Twice",
+      "genre": "Action",
+      "price": "$59.99",
+      "rating": 4.9,
+      "platform": "PC",
+      "img": "https://placehold.co/150x200"
+    },
+    {
+      "id": 26,
+      "title": "Dead by Daylight",
+      "genre": "Horror",
+      "price": "$19.99",
+      "rating": 4.4,
+      "platform": "PC",
+      "img": "https://placehold.co/150x200"
+    },
+    {
+      "id": 27,
+      "title": "The Elder Scrolls V: Skyrim",
+      "genre": "RPG",
+      "price": "$39.99",
+      "rating": 4.8,
+      "platform": "PC",
+      "img": "https://placehold.co/150x200"
+    },
+    {
+      "id": 28,
+      "title": "Red Dead Redemption",
+      "genre": "Action",
+      "price": "$29.99",
+      "rating": 4.6,
+      "platform": "Console",
+      "img": "https://placehold.co/150x200"
+    },
+    {
+      "id": 29,
+      "title": "Battlefield 2042",
+      "genre": "Shooter",
+      "price": "$59.99",
+      "rating": 4.2,
+      "platform": "PC",
+      "img": "https://placehold.co/150x200"
+    },
+    {
+      "id": 30,
+      "title": "Minecraft: Java Edition",
+      "genre": "Adventure",
+      "price": "$26.99",
+      "rating": 4.7,
+      "platform": "PC",
+      "img": "https://placehold.co/150x200"
+    }
   ]
 }

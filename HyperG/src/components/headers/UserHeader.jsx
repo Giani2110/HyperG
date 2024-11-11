@@ -2,13 +2,16 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStore, faBook, faUser, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import { useAuth } from "../../context/AuthContext";
+import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 function UserHeader() {
   const { logout } = useAuth();
-
+  const navigate = useNavigate();
   const handleLogout = (e) => {
     e.preventDefault();
     logout();
+    navigate('/login');
   };
 
   return (
@@ -16,38 +19,38 @@ function UserHeader() {
       <div className="container mx-auto flex justify-between items-center">
         <h1 className="text-2xl font-semibold">HyperG</h1>
         <nav className="flex space-x-4">
-          <a
-            href="#catalogo"
+          <Link
+            to="/catalog"
             className="flex items-center space-x-2 px-4 py-2 rounded bg-gray-700 hover:bg-gray-600 transition-colors duration-200 text-base"
           >
             <FontAwesomeIcon icon={faStore} />
             <span>Catálogo</span>
-          </a>
+          </Link>
 
-          <a
-            href="#biblioteca"
+          <Link
+            to="/library"
             className="flex items-center space-x-2 px-4 py-2 rounded bg-gray-800 hover:bg-gray-700 transition-colors duration-200 text-base"
           >
             <FontAwesomeIcon icon={faBook} />
             <span>Biblioteca</span>
-          </a>
+          </Link>
 
-          <a
-            href="#perfil"
+          <Link
+            to="/perfil"
             className="flex items-center space-x-2 px-4 py-2 rounded bg-green-600 hover:bg-green-500 transition-colors duration-200 text-base"
           >
             <FontAwesomeIcon icon={faUser} />
             <span>Perfil</span>
-          </a>
+          </Link>
 
-          <a
-            href="#logout"
+          <button
+
             className="flex items-center space-x-2 px-4 py-2 rounded bg-red-600 hover:bg-red-500 transition-colors duration-200 text-base"
             onClick={handleLogout}
           >
             <FontAwesomeIcon icon={faSignOutAlt} />
             <span>Cerrar sesión</span>
-          </a>
+          </button>
         </nav>
       </div>
     </header>

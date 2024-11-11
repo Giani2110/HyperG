@@ -50,6 +50,7 @@ function Register() {
       email,
       password,
       type: "client",
+      library: [],
     };
 
     try {

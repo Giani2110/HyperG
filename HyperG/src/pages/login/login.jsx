@@ -1,50 +1,45 @@
 import React, { useState } from 'react';
 import { Button, TextField, Typography, Box, Container } from '@mui/material';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useAuth } from '../../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
 
 function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const {login} = useAuth();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const { login } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!email || !password) {
-      toast.error("Por favor ingresa tu email y contraseña");
+      toast.error('Por favor ingresa tu email y contraseña');
       return;
     }
 
     try {
-      const response = await fetch("http://localhost:5000/users");
+      const response = await fetch('http://localhost:5000/users');
       const data = await response.json();
       const user = data.find(
         (user) => user.email === email && user.password === password
       );
 
       if (!user) {
-        toast.error("Correo electrónico o contraseña incorrectos");  // Alerta de error
+        toast.error('Correo electrónico o contraseña incorrectos');
         return;
       }
 
       login(user);
-
-      toast.success("¡Inicio de sesión exitoso!");
-
-      navigate("/catalog");
-
-      console.log("Usuario logueado:", user);
+      toast.success('¡Inicio de sesión exitoso!');
+      navigate('/catalog');
     } catch (error) {
-      console.error("Error al hacer la solicitud:", error);
-      toast.error("Hubo un error al conectar con el servidor");
+      console.error('Error al hacer la solicitud:', error);
+      toast.error('Hubo un error al conectar con el servidor');
     }
   };
 
@@ -79,18 +74,18 @@ function Login() {
               className="bg-gray-700 text-white"
               required
               sx={{
-                "& .MuiInputLabel-root": {
-                  color: "white",
+                '& .MuiInputLabel-root': {
+                  color: 'white',
                 },
-                "& .MuiOutlinedInput-root": {
-                  "& fieldset": {
-                    borderColor: "white",
+                '& .MuiOutlinedInput-root': {
+                  '& fieldset': {
+                    borderColor: 'white',
                   },
-                  "&:hover fieldset": {
-                    borderColor: "yellow",
+                  '&:hover fieldset': {
+                    borderColor: 'yellow',
                   },
-                  "&.Mui-focused fieldset": {
-                    borderColor: "yellow",
+                  '&.Mui-focused fieldset': {
+                    borderColor: 'yellow',
                   },
                 },
               }}
@@ -113,18 +108,18 @@ function Login() {
               className="bg-gray-700 text-white"
               required
               sx={{
-                "& .MuiInputLabel-root": {
-                  color: "white",
+                '& .MuiInputLabel-root': {
+                  color: 'white',
                 },
-                "& .MuiOutlinedInput-root": {
-                  "& fieldset": {
-                    borderColor: "white",
+                '& .MuiOutlinedInput-root': {
+                  '& fieldset': {
+                    borderColor: 'white',
                   },
-                  "&:hover fieldset": {
-                    borderColor: "yellow",
+                  '&:hover fieldset': {
+                    borderColor: 'yellow',
                   },
-                  "&.Mui-focused fieldset": {
-                    borderColor: "yellow",
+                  '&.Mui-focused fieldset': {
+                    borderColor: 'yellow',
                   },
                 },
               }}
@@ -149,7 +144,7 @@ function Login() {
 
           <Box mt={2} className="text-center">
             <Typography variant="body2" color="textSecondary">
-              ¿No tienes una cuenta?{" "}
+              ¿No tienes una cuenta?{' '}
               <Link to="/register" className="text-yellow-500">
                 Regístrate aquí
               </Link>
