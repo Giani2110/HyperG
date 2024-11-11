@@ -6,13 +6,14 @@
       "email": "Giani@gmail.com",
       "password": "Giani1234",
       "type": "client"
-    },
-    {
-      "id": "45bf",
-      "username": "Lopez",
-      "email": "Lopez@Lopez.Lopez",
-      "password": "Lopez123",
-      "type": "client"
     }
+  ],
+  "games": [
+    { "id": 1, "title": "Cyberpunk 2077", "genre": "RPG", "price": "$29.99", "rating": 4.5, "platform": "PC", "img": "https://placehold.co/150x200" },
+    { "id": 2, "title": "The Witcher 3", "genre": "RPG", "price": "$19.99", "rating": 4.8, "platform": "PC", "img": "https://placehold.co/150x200" },
+    { "id": 3, "title": "Red Dead Redemption 2", "genre": "Action", "price": "$39.99", "rating": 4.6, "platform": "Console", "img": "https://placehold.co/150x200" },
+    { "id": 4, "title": "Elden Ring", "genre": "Adventure", "price": "$59.99", "rating": 4.9, "platform": "Console", "img": "https://placehold.co/150x200" },
+    { "id": 5, "title": "The Last of Us", "genre": "Action", "price": "$49.99", "rating": 4.7, "platform": "Console", "img": "https://placehold.co/150x200" },
+    { "id": 6, "title": "Rocket League", "genre": "Sports", "price": "$19.99", "rating": 4.5, "platform": "Console", "img": "https://placehold.co/150x200" }
   ]
 }

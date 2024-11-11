@@ -23,7 +23,7 @@ function App() {
                 <Route path="/register" element={<Register />} />
               </Route>
 
-              <Route element={<UserLayout />}>
+              <Route element={<UserLayout/>}>
                 <Route path="/catalog" element={ <ProtectedRoute allowedRoles={['client']}> <Catalog /> </ProtectedRoute> } />
               </Route>
             </Routes>

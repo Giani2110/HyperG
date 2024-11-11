@@ -1,33 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faShoppingCart, faStar } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faShoppingCart, faStar, faGamepad, faDesktop, faTag } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
+import Footer from "../../components/footer/Footer";
+import axios from "axios";
 
 function Catalog() {
+  const [games, setGames] = useState([]);
   const [search, setSearch] = useState("");
   const [genre, setGenre] = useState("");
   const [platform, setPlatform] = useState("");
   const [price, setPrice] = useState("");
 
-  const games = [
-    { id: 1, title: "Cyberpunk 2077", genre: "RPG", price: "$29.99", rating: 4.5, platform: "PC", img: "https://placehold.co/150x200" },
-    { id: 2, title: "The Witcher 3", genre: "RPG", price: "$19.99", rating: 4.8, platform: "PC", img: "https://placehold.co/150x200" },
-    { id: 3, title: "Red Dead Redemption 2", genre: "Action", price: "$39.99", rating: 4.6, platform: "Console", img: "https://placehold.co/150x200" },
-    { id: 4, title: "Elden Ring", genre: "Adventure", price: "$59.99", rating: 4.9, platform: "Console", img: "https://placehold.co/150x200" },
-  ];
+  useEffect(() => {
+    axios.get("http://localhost:5000/games")
+      .then(response => setGames(response.data))
+      .catch(error => console.error("Error al obtener los juegos:", error));
+  }, []);
 
   const handleSearchChange = (e) => setSearch(e.target.value);
   const handleGenreChange = (e) => setGenre(e.target.value);
   const handlePlatformChange = (e) => setPlatform(e.target.value);
   const handlePriceChange = (e) => setPrice(e.target.value);
 
+  const handleClearFilters = () => {
+    setSearch("");
+    setGenre("");
+    setPlatform("");
+    setPrice("");
+  };
+
   return (
     <div className="bg-gray-900 min-h-screen py-8" style={{ marginTop: "80px" }}>
       <div className="max-w-screen-xl mx-auto px-4">
         <h4 className="text-white text-center mb-12 mt-12 text-2xl font-bold">Catálogo de Juegos</h4>
 
-        <div className="flex gap-4">
-          <div className="bg-gray-800 p-6 rounded-md w-full sm:w-1/4 space-y-6">
+        <div className="flex gap-8">
+          <div className="bg-gray-800 p-6 rounded-md w-1/4 space-y-6 sticky top-24 z-10 h-[500px] overflow-y-auto">
             <h6 className="text-white mb-4 text-lg font-semibold">Filtros</h6>
 
             <div className="relative">
@@ -38,10 +47,13 @@ function Catalog() {
                 onChange={handleSearchChange}
                 className="bg-gray-700 text-white p-3 pl-10 w-full rounded-md placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-600 transition duration-300"
               />
-              <FontAwesomeIcon icon={faSearch} className="absolute left-3 top-3 text-white" />
+              <FontAwesomeIcon icon={faSearch} className="absolute left-3 top-4 text-white" />
             </div>
 
             <div className="relative">
+              <div className="absolute left-3 top-3 text-white">
+                <FontAwesomeIcon icon={faGamepad} />
+              </div>
               <select
                 value={genre}
                 onChange={handleGenreChange}
@@ -49,13 +61,16 @@ function Catalog() {
               >
                 <option value="" disabled>Selecciona Género</option>
                 <option value="RPG">RPG</option>
-                <option value="Acción">Acción</option>
-                <option value="Aventura">Aventura</option>
+                <option value="Action">Acción</option>
+                <option value="Adventure">Aventura</option>
+                <option value="Sports">Deporte</option>
               </select>
-              <FontAwesomeIcon icon={faShoppingCart} className="absolute left-3 top-3 text-white" />
             </div>
 
             <div className="relative">
+              <div className="absolute left-3 top-3 text-white">
+                <FontAwesomeIcon icon={faDesktop} />
+              </div>
               <select
                 value={platform}
                 onChange={handlePlatformChange}
@@ -63,12 +78,14 @@ function Catalog() {
               >
                 <option value="" disabled>Selecciona Plataforma</option>
                 <option value="PC">PC</option>
-                <option value="Consola">Consola</option>
+                <option value="Console">Consola</option>
               </select>
-              <FontAwesomeIcon icon={faShoppingCart} className="absolute left-3 top-3 text-white" />
             </div>
 
             <div className="relative">
+              <div className="absolute left-3 top-3 text-white">
+                <FontAwesomeIcon icon={faTag} />
+              </div>
               <select
                 value={price}
                 onChange={handlePriceChange}
@@ -79,12 +96,20 @@ function Catalog() {
                 <option value="20-50">$20 a $50</option>
                 <option value="50+">Más de $50</option>
               </select>
-              <FontAwesomeIcon icon={faShoppingCart} className="absolute left-3 top-3 text-white" />
+            </div>
+
+            <div>
+              <button
+                onClick={handleClearFilters}
+                className="w-full bg-red-600 hover:bg-red-700 text-white py-2 rounded-md text-sm mt-4"
+              >
+                Limpiar Filtros
+              </button>
             </div>
           </div>
 
           <div className="flex-grow">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="space-y-8">
               {games
                 .filter(game => {
                   return (
@@ -99,37 +124,40 @@ function Catalog() {
                   );
                 })
                 .map((game) => (
-                  <div key={game.id}>
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.4 }}
-                    >
-                      <div className="bg-gray-800 text-white rounded-md shadow-lg">
-                        <img className="w-full h-48 object-cover rounded-t-md" src={game.img} alt={game.title} />
-                        <div className="p-4">
-                          <h5 className="text-white font-semibold">{game.title}</h5>
-                          <p className="text-gray-400 mt-1">Género: {game.genre}</p>
-                          <p className="text-gray-400 mt-1">Plataforma: {game.platform}</p>
-                          <div className="flex items-center mt-2">
-                            <FontAwesomeIcon icon={faStar} className="text-yellow-400 mr-1" />
-                            <span className="text-gray-400">{game.rating}</span>
-                          </div>
-                          <p className="text-yellow-500 text-xl mt-2">{game.price}</p>
+                  <motion.div
+                    key={game.id}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4 }}
+                    className="bg-gray-800 text-white p-6 rounded-md shadow-lg"
+                  >
+                    <div className="flex items-center justify-between space-x-4">
+                      <img className="w-32 h-32 object-cover rounded-md" src={game.img} alt={game.title} />
+                      <div className="flex flex-col justify-between w-full">
+                        <h5 className="text-white font-semibold text-xl">{game.title}</h5>
+                        <div className="text-gray-400 text-sm">
+                          <span className="block">Género: {game.genre}</span>
+                          <span className="block">Plataforma: {game.platform}</span>
                         </div>
-                        <div className="p-4">
-                          <button className="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md text-sm">
-                            <FontAwesomeIcon icon={faShoppingCart} className="mr-2" />
-                            Comprar
-                          </button>
+                        <div className="flex justify-between items-center mt-2">
+                          <span className="flex items-center text-yellow-400">
+                            <FontAwesomeIcon icon={faStar} className="mr-1" />
+                            {game.rating}
+                          </span>
                         </div>
                       </div>
-                    </motion.div>
-                  </div>
+                      <button className="flex items-center bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-md mt-6 self-center">
+                        <FontAwesomeIcon icon={faShoppingCart} className="mr-2" />
+                        Comprar - {game.price}
+                      </button>
+                    </div>
+                  </motion.div>
                 ))}
             </div>
           </div>
         </div>
+
+        <Footer />
       </div>
     </div>
   );

@@ -127,7 +127,7 @@ function Home() {
             rápida, te aseguramos que no querrás irte.
           </p>
           <a
-            href="#signup"
+            href="register"
             className="inline-block bg-yellow-600 hover:bg-yellow-500 text-white px-8 py-3 rounded-full text-xl transition duration-300 shadow-lg"
             data-aos="zoom-in"
           >
