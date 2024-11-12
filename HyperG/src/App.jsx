@@ -8,6 +8,7 @@ import Catalog from './pages/catalog/catalog.jsx';
 import Library from './pages/library/library.jsx';
 import LandingLayout from './layout/LandingLayout.jsx';
 import UserLayout from './layout/UserLayout.jsx';
+import Profile from './pages/profile/profile.jsx';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './context/ProtectedRoute';
 
@@ -27,6 +28,7 @@ function App() {
               <Route element={<UserLayout />}>
                 <Route path="/catalog" element={<ProtectedRoute allowedRoles={['client']}><Catalog /></ProtectedRoute>} />
                 <Route path="/library" element={<ProtectedRoute allowedRoles={['client']}><Library /></ProtectedRoute>} />
+                <Route path="/profile" element={<ProtectedRoute allowedRoles={['client']}><Profile /></ProtectedRoute>} />
               </Route>
             </Routes>
           </main>

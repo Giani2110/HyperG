@@ -8,49 +8,42 @@
       "type": "client",
       "library": [
         {
-          "id": "2",
-          "title": "The Witcher 3",
-          "genre": "RPG",
-          "price": "$19.99",
-          "rating": 4.8,
-          "platform": "PC",
-          "img": "https://placehold.co/150x200"
-        },
-        {
-          "id": "3",
-          "title": "Red Dead Redemption 2",
-          "genre": "Action",
-          "price": "$39.99",
-          "rating": 4.6,
-          "platform": "Console",
-          "img": "https://placehold.co/150x200"
-        },
-        {
-          "id": "7",
-          "title": "Grand Theft Auto V",
-          "genre": "Action",
-          "price": "$19.99",
-          "rating": 4.8,
-          "platform": "PC",
-          "img": "https://placehold.co/150x200"
-        },
-        {
           "id": "1",
           "title": "Cyberpunk 2077",
           "genre": "RPG",
           "price": "$29.99",
           "rating": 4.5,
           "platform": "PC",
-          "img": "https://placehold.co/150x200"
+          "img": "https://imgs.search.brave.com/h51q0JqTASWIFrslgsv45V0gBscRHfHzkndIutRlRnI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aG9iYnljb25zb2xh/cy5jb20vc2l0ZXMv/bmF2aS5heGVsc3By/aW5nZXIuZXMvcHVi/bGljL21lZGlhL2lt/YWdlLzIwMjAvMDIv/Y3liZXJwdW5rLTIw/NzctcG9ydGFkYS1m/aWNoYS0wMS0xODc3/MzU3LmpwZz90Zj0z/ODQweA",
+          "installed": false
         },
         {
-          "id": "23",
-          "title": "Genshin Impact",
-          "genre": "RPG",
-          "price": "Free",
-          "rating": 4.6,
+          "id": "5",
+          "title": "The Last of Us",
+          "genre": "Action",
+          "price": "$49.99",
+          "rating": 4.7,
+          "platform": "Console",
+          "img": "https://imgs.search.brave.com/3TIR95xDX1gxBYuO3TtahMTK4M21ARh55D0MsUK59bQ/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMuaGJvLmNvbS8y/MDI0LTAzL1RoZUxh/c3RvZlVzXzI1NjB4/Mzg0MC1jLmpwZw",
+          "installed": false
+        }
+      ]
+    },
+    {
+      "id": "1b93",
+      "username": "Axel",
+      "email": "Axel@gmail.com",
+      "password": "Axel1234",
+      "type": "client",
+      "library": [
+        {
+          "id": "29",
+          "title": "Hollow Knight",
+          "genre": "Action",
+          "price": "$14.99",
+          "rating": 4.8,
           "platform": "PC",
-          "img": "https://placehold.co/150x200"
+          "img": "https://imgs.search.brave.com/qe2OCTU3HjCUAi-SSBBr6pUnfR7nzJ4Kgl8rbDJPjOI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXIuZm9yZnVu/LmNvbS9mZXRjaC9l/Yi9lYjUxYTI0N2Rl/MDMzZDc3NTE4ZWRh/YjAyYjhlMWVlNy5q/cGVn"
         }
       ]
     }
@@ -63,7 +56,7 @@
       "price": "$29.99",
       "rating": 4.5,
       "platform": "PC",
-      "img": "https://placehold.co/150x200"
+      "img": "https://imgs.search.brave.com/h51q0JqTASWIFrslgsv45V0gBscRHfHzkndIutRlRnI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aG9iYnljb25zb2xh/cy5jb20vc2l0ZXMv/bmF2aS5heGVsc3By/aW5nZXIuZXMvcHVi/bGljL21lZGlhL2lt/YWdlLzIwMjAvMDIv/Y3liZXJwdW5rLTIw/NzctcG9ydGFkYS1m/aWNoYS0wMS0xODc3/MzU3LmpwZz90Zj0z/ODQweA"
     },
     {
       "id": "2",
@@ -72,7 +65,7 @@
       "price": "$19.99",
       "rating": 4.8,
       "platform": "PC",
-      "img": "https://placehold.co/150x200"
+      "img": "https://imgs.search.brave.com/CQ6Ro42dLKO1LCYzLb7tfJNrHhNXBuYGsDPdsfSHBIw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aG9iYnljb25zb2xh/cy5jb20vc2l0ZXMv/bmF2aS5heGVsc3By/aW5nZXIuZXMvcHVi/bGljL21lZGlhL2lt/YWdlLzIwMTYvMDcv/d2l0Y2hlci0zLXdp/bGQtaHVudC1jYXJh/dHVsYS5qcGc_dGY9/Mzg0MHg"
     },
     {
       "id": "3",
@@ -81,7 +74,7 @@
       "price": "$39.99",
       "rating": 4.6,
       "platform": "Console",
-      "img": "https://placehold.co/150x200"
+      "img": "https://imgs.search.brave.com/PppndanAZDWqkvpy2R4MyCIm-Glv-WaCzh3dDrFS7DM/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aG9iYnljb25zb2xh/cy5jb20vc2l0ZXMv/bmF2aS5heGVsc3By/aW5nZXIuZXMvcHVi/bGljL21lZGlhL2lt/YWdlLzIwMTYvMTAv/cmVkLWRlYWQtcmVk/ZW1wdGlvbi0yLWNh/cmF0dWxhLXByb3Zp/c2lvbmFsLmpwZz90/Zj0zODQweA"
     },
     {
       "id": "4",
@@ -90,7 +83,7 @@
       "price": "$59.99",
       "rating": 4.9,
       "platform": "Console",
-      "img": "https://placehold.co/150x200"
+      "img": "https://imgs.search.brave.com/uUKfAt8mU1YGdCbRCPltif27qxF7kEfyikIffKEtG04/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMud2lraWEubm9j/b29raWUubmV0L2Vs/ZGVucmluZy9pbWFn/ZXMvMC8wZC9FbGRl/bl9SaW5nX1BvcnRh/ZGEuanBnL3Jldmlz/aW9uL2xhdGVzdC9z/Y2FsZS10by13aWR0/aC1kb3duLzMwMD9j/Yj0yMDIzMDMzMTIy/MzgwNCZwYXRoLXBy/ZWZpeD1lcw.jpeg"
     },
     {
       "id": "5",
@@ -99,7 +92,7 @@
       "price": "$49.99",
       "rating": 4.7,
       "platform": "Console",
-      "img": "https://placehold.co/150x200"
+      "img": "https://imgs.search.brave.com/3TIR95xDX1gxBYuO3TtahMTK4M21ARh55D0MsUK59bQ/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMuaGJvLmNvbS8y/MDI0LTAzL1RoZUxh/c3RvZlVzXzI1NjB4/Mzg0MC1jLmpwZw"
     },
     {
       "id": "6",
@@ -108,7 +101,7 @@
       "price": "Free",
       "rating": 4.5,
       "platform": "Console",
-      "img": "https://placehold.co/150x200"
+      "img": "https://imgs.search.brave.com/pfsCQm4z5KIFe4PGvsMQY6YIZD4ovVhiS3B1N5nx8Kc/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvaGQvcm9j/a2V0LWxlYWd1ZS04/MDAteC0xMjAwLXBp/Y3R1cmUtaDhmNW1v/aG0yazE5ZWF0OS5q/cGc"
     },
     {
       "id": "7",
@@ -117,7 +110,7 @@
       "price": "$19.99",
       "rating": 4.8,
       "platform": "PC",
-      "img": "https://placehold.co/150x200"
+      "img": "https://imgs.search.brave.com/PYbKN8RnZ6FGjNzMSUV8iCV7qlbmxON-csx1s2qBzGU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzhkL2Ey/LzJiLzhkYTIyYjBk/MjU2ODM4NWI5MzVj/ZWM4YzU5MGI4MmVk/LmpwZw"
     },
     {
       "id": "8",
@@ -126,16 +119,16 @@
       "price": "$59.99",
       "rating": 4.9,
       "platform": "Console",
-      "img": "https://placehold.co/150x200"
+      "img": "https://imgs.search.brave.com/rLPIvNVzp8VxJgCxXk_L1oIMHeFOANuM8sQ98KvNYVc/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS52YW5kYWwubmV0/L3QyMDAvNDMwMzAv/dGhlLWxlZ2VuZC1v/Zi16ZWxkYS1icmVh/dGgtb2YtdGhlLXdp/bGQtMjAxNzMyMTMx/NDI5XzEuanBn"
     },
     {
       "id": "9",
-      "title": "The Witcher 3: Wild Hunt",
-      "genre": "RPG",
-      "price": "$29.99",
-      "rating": 4.7,
-      "platform": "PC",
-      "img": "https://placehold.co/150x200"
+      "title": "F1 23",
+      "genre": "Sports",
+      "price": "$59.99",
+      "rating": 4.9,
+      "platform": "Console",
+      "img": "https://imgs.search.brave.com/faF3ma-fsQ8UcaJXGO1-ny_lU6mZEIBx9y0bISfTirA/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFDQW5qNHM5bEwu/anBn"
     },
     {
       "id": "10",
@@ -144,7 +137,7 @@
       "price": "$49.99",
       "rating": 4.6,
       "platform": "Console",
-      "img": "https://placehold.co/150x200"
+      "img": "https://imgs.search.brave.com/SNnn7FjmuIqfam_1ZOxgQTQcB0fQA1-ElLLVAgch7jA/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9uaW50/aGVvcmlzdC5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMjQv/MDcvemVsZGFfZWNo/b2VzLW9mLXdpc2Rv/bV9ib3hhcnQuanBn/P3c9NjMy"
     },
     {
       "id": "11",
@@ -153,16 +146,16 @@
       "price": "$26.99",
       "rating": 4.9,
       "platform": "PC",
-      "img": "https://placehold.co/150x200"
+      "img": "https://imgs.search.brave.com/XQ6TR2OpmKpaNuyCQa64VVHRkESjMya736CZgVGActE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9wcmV2/aWV3LnJlZGQuaXQv/dDQxOGp2Mzl3dzc1/MS5wbmc_d2lkdGg9/NjQwJmNyb3A9c21h/cnQmYXV0bz13ZWJw/JnM9OGJmZTdjZDVh/N2ZjZjI0MmI3ZThi/NjIwYjU1YWU4Yjlj/MDQzNGNhZg"
     },
     {
       "id": "12",
       "title": "Apex Legends",
-      "genre": "Shooter",
+      "genre": "Action",
       "price": "Free",
       "rating": 4.7,
       "platform": "PC",
-      "img": "https://placehold.co/150x200"
+      "img": "https://imgs.search.brave.com/V9PqXNg_2GKM_Xeztilo1m0SJNeFxIysPdIGTjKz2RU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YXByb3h5LnR2dHJv/cGVzLm9yZy93aWR0/aC8xMjAwL2h0dHBz/Oi8vc3RhdGljLnR2/dHJvcGVzLm9yZy9w/bXdpa2kvcHViL2lt/YWdlcy9hcGV4X2xl/Z2VuZHMuanBn"
     },
     {
       "id": "13",
@@ -171,34 +164,34 @@
       "price": "$59.99",
       "rating": 4.4,
       "platform": "Console",
-      "img": "https://placehold.co/150x200"
+      "img": "https://imgs.search.brave.com/K-SCIYP2-p9a8ASY7zUP0c4gzFvc0TDoEx8BVC6Vweo/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1QlpqVTROR0kw/WldRdFpqZzRZaTAw/WTJWaUxXRmpPR0l0/WlRFMU1HRm1Nelpq/WkRFeVhrRXlYa0Zx/Y0djQC5qcGc"
     },
     {
       "id": "14",
       "title": "Fortnite",
-      "genre": "Shooter",
+      "genre": "Action",
       "price": "Free",
       "rating": 4.6,
       "platform": "Console",
-      "img": "https://placehold.co/150x200"
+      "img": "https://imgs.search.brave.com/HJ5_FRZJhRketnUpIazJYrEoOR6S8gAXT3fhDxJTA98/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1Qk1UWmxNbUl4/TTJFdE4yWTRaaTAw/TTJaaExUazNOemd0/TmpKbVpUVTBNVFEz/WWpjd1hrRXlYa0Zx/Y0djQC5qcGc"
     },
     {
       "id": "15",
       "title": "Among Us",
-      "genre": "Multiplayer",
+      "genre": "Adventure",
       "price": "$4.99",
       "rating": 4.3,
       "platform": "PC",
-      "img": "https://placehold.co/150x200"
+      "img": "https://imgs.search.brave.com/qx7Lk46rFyfEpJSTPy-r6O4cNtEs9gtpv_HMKEqWTn8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMubmludGVuZG8u/Y29tL2ltYWdlL3Vw/bG9hZC9mX2F1dG8v/cV9hdXRvL2Rwcl8x/LjUvbmNvbS9zb2Z0/d2FyZS9zd2l0Y2gv/NzAwMTAwMDAwMzYw/OTgvZGVzYy9mYmE2/M2MwOWY0ZGQ0MWM4/NDFmMjM0NzQ4NDBj/OGY1ZmU0ZDUzNzhh/YWUzN2E5NGZmMzlh/ZGZmZmE3ZWYwYzEx.jpeg"
     },
     {
       "id": "16",
-      "title": "Call of Duty: Warzone",
-      "genre": "Shooter",
+      "title": "Call of Duty: Infinite Warfare",
+      "genre": "Action",
       "price": "Free",
       "rating": 4.5,
       "platform": "PC",
-      "img": "https://placehold.co/150x200"
+      "img": "https://imgs.search.brave.com/sxR0xkJRs6xoaLV0798IHxRHNxfgy6XVccKI_7jtlKg/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzU3L2Ix/L2Y3LzU3YjFmNzQ2/ODc5YWMzZDkwMzhi/MjRmZTJiMDBjMWYy/LmpwZw"
     },
     {
       "id": "17",
@@ -207,52 +200,52 @@
       "price": "$49.99",
       "rating": 4.8,
       "platform": "Console",
-      "img": "https://placehold.co/150x200"
+      "img": "https://imgs.search.brave.com/YB8chVF7PWEIys20r0fTZ9k7U7Vw4GkrAn5hMl2PXsA/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS52YW5kYWwubmV0/L3QyMDAvNDMzOTUv/c3VwZXItbWFyaW8t/b2R5c3NleS0yMDE3/MTAyNjExMDM1XzI1/LmpwZw"
     },
     {
       "id": "18",
       "title": "Overwatch 2",
-      "genre": "Shooter",
+      "genre": "Action",
       "price": "Free",
       "rating": 4.4,
       "platform": "PC",
-      "img": "https://placehold.co/150x200"
+      "img": "https://imgs.search.brave.com/xwyPnVpfa6esTLkVdNGApaaVUUK1HJu_9xw9LSjTdx4/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YXByb3h5LnR2dHJv/cGVzLm9yZy93aWR0/aC8xMjAwL2h0dHBz/Oi8vc3RhdGljLnR2/dHJvcGVzLm9yZy9w/bXdpa2kvcHViL2lt/YWdlcy9vdmVyd2F0/Y2hfdHJhY2VyX2Nv/dmVyLmpwZw"
     },
     {
       "id": "19",
       "title": "Hades",
-      "genre": "Rogue-like",
+      "genre": "RPG",
       "price": "$24.99",
       "rating": 4.8,
       "platform": "PC",
-      "img": "https://placehold.co/150x200"
+      "img": "https://imgs.search.brave.com/DkqnPCXBuoTrnaw1gGLI2WiXG69Q5T9OWPFhA40dCXE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YXByb3h5LnR2dHJv/cGVzLm9yZy93aWR0/aC8xMjAwL2h0dHBz/Oi8vc3RhdGljLnR2/dHJvcGVzLm9yZy9w/bXdpa2kvcHViL2lt/YWdlcy9oYWRlc18x/NDYucG5n"
     },
     {
       "id": "20",
       "title": "Valorant",
-      "genre": "Shooter",
+      "genre": "Action",
       "price": "Free",
       "rating": 4.7,
       "platform": "PC",
-      "img": "https://placehold.co/150x200"
+      "img": "https://imgs.search.brave.com/N7DVzaw1K3XQ-i9hu9HiW0MNCs6atF_aHZw9tD8yZDo/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2U2L2Yz/LzA5L2U2ZjMwOTI5/N2M0NThlNTkzZjNi/YmM0YmFhNWQwZTA2/LmpwZw"
     },
     {
       "id": "21",
       "title": "Ghost of Tsushima",
-      "genre": "Action",
+      "genre": "RPG",
       "price": "$59.99",
       "rating": 4.9,
       "platform": "Console",
-      "img": "https://placehold.co/150x200"
+      "img": "https://imgs.search.brave.com/BIhK09Itf97k9oPSRSu3a7MxlKI4qLAk7cM6m6uSO7M/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YXByb3h5LnR2dHJv/cGVzLm9yZy93aWR0/aC8xMjAwL2h0dHBz/Oi8vc3RhdGljLnR2/dHJvcGVzLm9yZy9w/bXdpa2kvcHViL2lt/YWdlcy9naG9zdG9m/dHN1c2hpbWEucG5n"
     },
     {
       "id": "22",
       "title": "Animal Crossing: New Horizons",
-      "genre": "Simulation",
+      "genre": "RPG",
       "price": "$59.99",
       "rating": 4.8,
       "platform": "Console",
-      "img": "https://placehold.co/150x200"
+      "img": "https://imgs.search.brave.com/BbTSeyL5e3lL87NhmBs6Fn7iaHGZZxLr97ZZLRC35jg/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS52YW5kYWwubmV0/L3QyMDAvNjU1NTcv/YW5pbWFsLWNyb3Nz/aW5nLW5ldy1ob3Jp/em9ucy0yMDIwMTEw/MTIzNzU2NjdfMS5q/cGc"
     },
     {
       "id": "23",
@@ -261,16 +254,16 @@
       "price": "Free",
       "rating": 4.6,
       "platform": "PC",
-      "img": "https://placehold.co/150x200"
+      "img": "https://imgs.search.brave.com/eoEMP6YDiny_3bE-AAsTEiqZONHttrN1nW7mcZfMc_I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS52YW5kYWwubmV0/L3QyMDAvNzU5NjIv/Z2Vuc2hpbi1pbXBh/Y3QtMjAyMDk0MTc1/NzMzNjRfMS5qcGc"
     },
     {
       "id": "24",
       "title": "Minecraft Dungeons",
-      "genre": "Action",
+      "genre": "Adventure",
       "price": "$19.99",
       "rating": 4.5,
       "platform": "Console",
-      "img": "https://placehold.co/150x200"
+      "img": "https://imgs.search.brave.com/rtrW4ZXzU18WnqtrPuaoXOjgi0Po0pX6v0925cho4_I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS52YW5kYWwubmV0/L3QyMDAvNjYyOTQv/bWluZWNyYWZ0LWR1/bmdlb25zLTIwMjA0/ODE5OTM2MjFfMS5q/cGc"
     },
     {
       "id": "25",
@@ -279,52 +272,52 @@
       "price": "$59.99",
       "rating": 4.9,
       "platform": "PC",
-      "img": "https://placehold.co/150x200"
+      "img": "https://imgs.search.brave.com/wbb2As54QRYyUiYKJqUWnO7PwI3udrHmPnF6P3FlQRw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1Qk16RmlNMlkz/Tm1NdE5EWTNNQzAw/TVRoaExXRmhObVl0/WmpJek1ETmpabU5o/TVRkaFhrRXlYa0Zx/Y0djQC5qcGc"
     },
     {
       "id": "26",
       "title": "Dead by Daylight",
-      "genre": "Horror",
+      "genre": "Action",
       "price": "$19.99",
-      "rating": 4.4,
+      "rating": 4.2,
       "platform": "PC",
-      "img": "https://placehold.co/150x200"
+      "img": "https://imgs.search.brave.com/_lxI0gM4vrNj8mmuN-J51czdTpE8DkS9uOWUa_00MMk/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC93cDIyMjIz/MjkuanBn"
     },
     {
       "id": "27",
-      "title": "The Elder Scrolls V: Skyrim",
+      "title": "Persona 5 Royal",
       "genre": "RPG",
-      "price": "$39.99",
+      "price": "$59.99",
       "rating": 4.8,
-      "platform": "PC",
-      "img": "https://placehold.co/150x200"
+      "platform": "Console",
+      "img": "https://imgs.search.brave.com/WG_FfA9TV_g6Za90nWXW-bl6g5OatQGJtt9fuHPlhjs/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pLmJs/b2dzLmVzL2M1OGEx/NS9wNXJfa2V5X2Fy/dC8xMzY2XzIwMDAu/anBlZw"
     },
     {
       "id": "28",
-      "title": "Red Dead Redemption",
-      "genre": "Action",
+      "title": "Doom Eternal",
+      "genre": "Shooter",
       "price": "$29.99",
-      "rating": 4.6,
-      "platform": "Console",
-      "img": "https://placehold.co/150x200"
+      "rating": 4.7,
+      "platform": "PC",
+      "img": "https://imgs.search.brave.com/adgEOOYiuKSUeDLMdedJO46ODPB0jR3ffh-kHLxMJFE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pLmJs/b2dzLmVzL2NkNjI3/Yy9hcHBzLjMzMjM4/LjY0MjM0NTU2OTU4/MzI0MTE0LmY5MjBj/ZWM5LWI0ZmItNDdm/NC1iYmFjLTY2N2Vk/OGJiODJlNi8xMzY2/XzIwMDAuanBlZw"
     },
     {
       "id": "29",
-      "title": "Battlefield 2042",
-      "genre": "Shooter",
-      "price": "$59.99",
-      "rating": 4.2,
+      "title": "Hollow Knight",
+      "genre": "Action",
+      "price": "$14.99",
+      "rating": 4.8,
       "platform": "PC",
-      "img": "https://placehold.co/150x200"
+      "img": "https://imgs.search.brave.com/qe2OCTU3HjCUAi-SSBBr6pUnfR7nzJ4Kgl8rbDJPjOI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXIuZm9yZnVu/LmNvbS9mZXRjaC9l/Yi9lYjUxYTI0N2Rl/MDMzZDc3NTE4ZWRh/YjAyYjhlMWVlNy5q/cGVn"
     },
     {
       "id": "30",
-      "title": "Minecraft: Java Edition",
-      "genre": "Adventure",
-      "price": "$26.99",
-      "rating": 4.7,
-      "platform": "PC",
-      "img": "https://placehold.co/150x200"
+      "title": "Assassin's Creed Valhalla",
+      "genre": "Action",
+      "price": "$39.99",
+      "rating": 4.6,
+      "platform": "Console",
+      "img": "https://imgs.search.brave.com/vN1qZCoJjuoijcOfKY7b17SDVhwXJYRQhmZEGUAV_9I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1QlpqZGlZakpt/TkRndFl6Z3hNUzAw/TmprNExXRXpabU10/Tm1WallXTmpOREpr/WmpWaVhrRXlYa0Zx/Y0djQC5qcGc"
     }
   ]
 }

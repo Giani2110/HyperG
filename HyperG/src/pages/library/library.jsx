@@ -41,11 +41,22 @@ function Library() {
         Swal.showLoading();
       },
       willClose: () => {
-        setUserLibrary(prevLibrary =>
-          prevLibrary.map(game =>
-            game.id === gameId ? { ...game, installed: true } : game
-          )
+        const updatedLibrary = userLibrary.map(game =>
+          game.id === gameId ? { ...game, installed: true } : game
         );
+        setUserLibrary(updatedLibrary);
+
+        const userId = user.id;
+        fetch(`http://localhost:5000/users/${userId}`, {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ library: updatedLibrary }),
+        })
+          .then((response) => response.json())
+          .then((data) => console.log("Biblioteca actualizada", data))
+          .catch((error) => console.error("Error al actualizar la biblioteca:", error));
       },
       background: '#1a1a1a',
       color: '#fff',
@@ -54,11 +65,23 @@ function Library() {
   };
 
   const handleDeleteClick = (gameId) => {
-    setUserLibrary(prevLibrary =>
-      prevLibrary.map(game =>
-        game.id === gameId ? { ...game, installed: false } : game
-      )
+    const updatedLibrary = userLibrary.map(game =>
+      game.id === gameId ? { ...game, installed: false } : game
     );
+    setUserLibrary(updatedLibrary);
+
+    const userId = user.id;
+    fetch(`http://localhost:5000/users/${userId}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ library: updatedLibrary }),
+    })
+      .then((response) => response.json())
+      .then((data) => console.log("Biblioteca actualizada", data))
+      .catch((error) => console.error("Error al actualizar la biblioteca:", error));
+
     Swal.fire({
       icon: 'success',
       title: 'Juego desinstalado',
@@ -122,7 +145,7 @@ function Library() {
   }
 
   return (
-    <motion.div 
+    <motion.div
       className="container mx-auto p-4 mt-24"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -203,24 +226,26 @@ function Library() {
 
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
         {sortedLibrary.map((game) => (
-          <motion.div 
+          <motion.div
             key={game.id}
-            className="bg-gray-800 text-white p-6 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300 transform hover:scale-105"
+            className="bg-gray-800 text-white p-6 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300 transform hover:scale-105 flex flex-col justify-between"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <img
-              src={game.img}
-              alt={game.title}
-              className="w-full h-48 object-cover rounded-md mb-4"
-            />
-            <div className="flex justify-between items-center mb-2">
-              <h3 className="text-lg font-semibold">{game.title}</h3>
-              <div className="flex items-center">
-                <FaStar className="text-yellow-500 mr-1" />
-                <span>{game.rating}</span>
+            <div className="flex flex-col items-center mb-4">
+              <img
+                src={game.img}
+                alt={game.title}
+                className="w-48 h-60 object-cover rounded-md mb-4 hover:scale-105 transition duration-300"
+              />
+              <div className="flex justify-between gap-4 items-center mb-2 w-full">
+                <h3 className="text-lg font-semibold truncate">{game.title}</h3>
+                <div className="flex items-center">
+                  <FaStar className="text-yellow-500 mr-1" />
+                  <span>{game.rating}</span>
+                </div>
               </div>
             </div>
             <p className="text-sm text-gray-400">{game.genre}</p>

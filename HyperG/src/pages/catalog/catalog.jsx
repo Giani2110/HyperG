@@ -4,6 +4,7 @@ import { faSearch, faShoppingCart, faStar, faGamepad, faDesktop, faTag } from "@
 import { motion } from "framer-motion";
 import Footer from "../../components/footer/Footer";
 import axios from "axios";
+import { useAuth } from "../../context/AuthContext";
 import Swal from "sweetalert2";
 
 function Catalog() {
@@ -19,7 +20,7 @@ function Catalog() {
       .then(response => setGames(response.data))
       .catch(error => console.error("Error al obtener los juegos:", error));
 
-    const userId = "4012";
+    const userId = user.id;
     axios.get(`http://localhost:5000/users/${userId}`)
       .then(response => setUserLibrary(response.data.library))
       .catch(error => console.error("Error al obtener la biblioteca del usuario:", error));
@@ -29,6 +30,7 @@ function Catalog() {
   const handleGenreChange = (e) => setGenre(e.target.value);
   const handlePlatformChange = (e) => setPlatform(e.target.value);
   const handlePriceChange = (e) => setPrice(e.target.value);
+  const { user } = useAuth();
 
   const handleClearFilters = () => {
     setSearch("");
@@ -53,7 +55,7 @@ function Catalog() {
     if (!confirmResult.isConfirmed) return;
 
     try {
-      const userId = "4012";
+      const userId = user.id;
       const updatedLibrary = [...userLibrary, game];
       await axios.patch(`http://localhost:5000/users/${userId}`, { library: updatedLibrary });
 
@@ -87,7 +89,7 @@ function Catalog() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
         >
-          Catálogo de Juegos
+          Catálogo de Juegos de {user.username}
         </motion.h4>
 
         <div className="flex gap-8">
@@ -176,8 +178,8 @@ function Catalog() {
             </div>
           </motion.div>
 
-          <div className="flex-grow">
-            <div className="space-y-8">
+          <div className="flex-grow ">
+            <div className="space-y-8 ">
               {games
                 .filter(game => {
                   return (
@@ -201,10 +203,10 @@ function Catalog() {
                       initial={{ opacity: 0, scale: 0.95 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.4 }}
-                      className="bg-gray-800 text-white p-6 rounded-md shadow-lg"
+                      className="bg-gray-800 hover:bg-gray-700 transition-colors duration-300 text-white p-6 rounded-md shadow-lg"
                     >
-                      <div className="flex items-center justify-between space-x-4">
-                        <img className="w-32 h-32 object-cover rounded-md" src={game.img} alt={game.title} />
+                      <div className="flex flex-col md:flex-row items-center justify-between space-x-4">
+                        <img className="w-full md:w-1/3 h-60 object-cover rounded-md" src={game.img} alt={game.title} />
                         <motion.div
                           className="flex flex-col justify-between w-full"
                           initial={{ opacity: 0 }}
@@ -217,12 +219,13 @@ function Catalog() {
                             <span className="block">Plataforma: {game.platform}</span>
                           </div>
                           <span className="text-green-500 font-bold mt-2">{game.price}</span>
+                          <span className="text-gray-400 text-sm mt-2"> Calificación: {game.rating} / 5 <FontAwesomeIcon icon={faStar} /></span>
                           <button
                             onClick={() => handleBuyGame(game)}
                             disabled={isOwned}
                             className={`${isOwned ? 'bg-gray-600 cursor-not-allowed' : 'bg-green-600 hover:bg-green-700'
                               } text-white py-2 px-4 mt-4 rounded-md text-sm transition duration-300 flex items-center justify-between ml-auto`}
-                            style={{ minWidth: '120px' }}  // Mantiene un ancho mínimo
+                            style={{ minWidth: '120px' }} 
                           >
                             {isOwned ? (
                               <>
