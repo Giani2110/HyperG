@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { FaStar, FaPlay, FaSearch, FaSort, FaFilter, FaTags, FaChevronDown, FaChevronUp, FaTimesCircle } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+import Swal from 'sweetalert2';
+import 'sweetalert2/src/sweetalert2.scss';
 
 function Library() {
-  const { user, loading } = useAuth(); // Obtén el usuario logueado y el estado de carga
+  const { user, loading } = useAuth();
   const [userLibrary, setUserLibrary] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [sortOption, setSortOption] = useState('title');
@@ -29,7 +32,44 @@ function Library() {
   }, [user]);
 
   const handleInstallClick = (gameId) => {
-    console.log(`Instalando el juego con ID: ${gameId}`);
+    Swal.fire({
+      title: 'Instalando...',
+      html: 'Espera un momento mientras instalamos el juego',
+      timer: 7000,
+      timerProgressBar: true,
+      didOpen: () => {
+        Swal.showLoading();
+      },
+      willClose: () => {
+        setUserLibrary(prevLibrary =>
+          prevLibrary.map(game =>
+            game.id === gameId ? { ...game, installed: true } : game
+          )
+        );
+      },
+      background: '#1a1a1a',
+      color: '#fff',
+      confirmButtonColor: '#3b82f6',
+    });
+  };
+
+  const handleDeleteClick = (gameId) => {
+    setUserLibrary(prevLibrary =>
+      prevLibrary.map(game =>
+        game.id === gameId ? { ...game, installed: false } : game
+      )
+    );
+    Swal.fire({
+      icon: 'success',
+      title: 'Juego desinstalado',
+      text: 'El juego ha sido desinstalado y está disponible para instalar de nuevo',
+      timer: 3000,
+      toast: true,
+      position: 'top-right',
+      showConfirmButton: false,
+      background: '#1a1a1a',
+      color: '#fff',
+    });
   };
 
   const handleSearchChange = (e) => {
@@ -82,7 +122,14 @@ function Library() {
   }
 
   return (
-    <div className="container mx-auto p-4 mt-24">
+    <motion.div 
+      className="container mx-auto p-4 mt-24"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <h3 className="text-2xl font-semibold mb-4">Biblioteca de {user.username}</h3>
       <div className="mb-8 flex justify-between items-center">
         <div className="flex items-center space-x-2">
           <FaSearch className="text-gray-400" />
@@ -156,9 +203,13 @@ function Library() {
 
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
         {sortedLibrary.map((game) => (
-          <div
+          <motion.div 
             key={game.id}
             className="bg-gray-800 text-white p-6 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300 transform hover:scale-105"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
           >
             <img
               src={game.img}
@@ -178,22 +229,25 @@ function Library() {
             <p className="text-sm text-gray-400 mt-2">{game.description}</p>
             <div className="mt-4">
               {game.installed ? (
-                <button className="w-full bg-green-500 text-white py-2 rounded-md" disabled>
-                  Instalado
+                <button
+                  onClick={() => handleDeleteClick(game.id)}
+                  className="bg-red-500 text-white p-3 rounded-lg w-full hover:bg-red-600 transition duration-300"
+                >
+                  Desinstalar
                 </button>
               ) : (
                 <button
                   onClick={() => handleInstallClick(game.id)}
-                  className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-300"
+                  className="bg-blue-500 text-white p-3 rounded-lg w-full hover:bg-blue-600 transition duration-300"
                 >
                   Instalar
                 </button>
               )}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
 

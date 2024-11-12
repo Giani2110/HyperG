@@ -4,6 +4,7 @@ import { faSearch, faShoppingCart, faStar, faGamepad, faDesktop, faTag } from "@
 import { motion } from "framer-motion";
 import Footer from "../../components/footer/Footer";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 function Catalog() {
   const [games, setGames] = useState([]);
@@ -11,11 +12,17 @@ function Catalog() {
   const [genre, setGenre] = useState("");
   const [platform, setPlatform] = useState("");
   const [price, setPrice] = useState("");
+  const [userLibrary, setUserLibrary] = useState([]);
 
   useEffect(() => {
     axios.get("http://localhost:5000/games")
       .then(response => setGames(response.data))
       .catch(error => console.error("Error al obtener los juegos:", error));
+
+    const userId = "4012";
+    axios.get(`http://localhost:5000/users/${userId}`)
+      .then(response => setUserLibrary(response.data.library))
+      .catch(error => console.error("Error al obtener la biblioteca del usuario:", error));
   }, []);
 
   const handleSearchChange = (e) => setSearch(e.target.value);
@@ -28,6 +35,47 @@ function Catalog() {
     setGenre("");
     setPlatform("");
     setPrice("");
+  };
+
+  const handleBuyGame = async (game) => {
+    const confirmResult = await Swal.fire({
+      title: '¿Desea confirmar la compra?',
+      text: "Este juego se agregará a tu biblioteca",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, comprar',
+      background: '#2d2d2d',
+      color: '#ffffff',
+    });
+
+    if (!confirmResult.isConfirmed) return;
+
+    try {
+      const userId = "4012";
+      const updatedLibrary = [...userLibrary, game];
+      await axios.patch(`http://localhost:5000/users/${userId}`, { library: updatedLibrary });
+
+      setUserLibrary(updatedLibrary);
+
+      Swal.fire({
+        title: 'Compra Exitosa!',
+        text: 'El juego se ha agregado a tu biblioteca.',
+        icon: 'success',
+        background: '#2d2d2d',
+        color: '#ffffff',
+      });
+    } catch (error) {
+      console.error("Error al realizar la compra:", error);
+      Swal.fire({
+        title: 'Error',
+        text: 'Hubo un error al realizar la compra. Por favor, inténtelo nuevamente.',
+        icon: 'error',
+        background: '#2d2d2d',
+        color: '#ffffff',
+      });
+    }
   };
 
   return (
@@ -144,52 +192,60 @@ function Catalog() {
                     ))
                   );
                 })
-                .map((game) => (
-                  <motion.div
-                    key={game.id}
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.4 }}
-                    className="bg-gray-800 text-white p-6 rounded-md shadow-lg"
-                  >
-                    <div className="flex items-center justify-between space-x-4">
-                      <img className="w-32 h-32 object-cover rounded-md" src={game.img} alt={game.title} />
-                      <motion.div
-                        className="flex flex-col justify-between w-full"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.5 }}
-                      >
-                        <h5 className="text-white font-semibold text-xl">{game.title}</h5>
-                        <div className="text-gray-400 text-sm">
-                          <span className="block">Género: {game.genre}</span>
-                          <span className="block">Plataforma: {game.platform}</span>
-                        </div>
-                        <div className="flex justify-between items-center mt-2">
-                          <span className="flex items-center text-yellow-400">
-                            <FontAwesomeIcon icon={faStar} className="mr-1" />
-                            {game.rating}
-                          </span>
-                        </div>
-                      </motion.div>
-                      <motion.button
-                        className="flex items-center bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-md mt-6 self-center"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.6 }}
-                      >
-                        <FontAwesomeIcon icon={faShoppingCart} className="mr-2" />
-                        Comprar - {game.price}
-                      </motion.button>
-                    </div>
-                  </motion.div>
-                ))}
+                .map((game) => {
+                  const isOwned = userLibrary.some(libGame => libGame.id === game.id);
+
+                  return (
+                    <motion.div
+                      key={game.id}
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.4 }}
+                      className="bg-gray-800 text-white p-6 rounded-md shadow-lg"
+                    >
+                      <div className="flex items-center justify-between space-x-4">
+                        <img className="w-32 h-32 object-cover rounded-md" src={game.img} alt={game.title} />
+                        <motion.div
+                          className="flex flex-col justify-between w-full"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ duration: 0.5 }}
+                        >
+                          <h5 className="text-white font-semibold text-xl">{game.title}</h5>
+                          <div className="text-gray-400 text-sm">
+                            <span className="block">Género: {game.genre}</span>
+                            <span className="block">Plataforma: {game.platform}</span>
+                          </div>
+                          <span className="text-green-500 font-bold mt-2">{game.price}</span>
+                          <button
+                            onClick={() => handleBuyGame(game)}
+                            disabled={isOwned}
+                            className={`${isOwned ? 'bg-gray-600 cursor-not-allowed' : 'bg-green-600 hover:bg-green-700'
+                              } text-white py-2 px-4 mt-4 rounded-md text-sm transition duration-300 flex items-center justify-between ml-auto`}
+                            style={{ minWidth: '120px' }}  // Mantiene un ancho mínimo
+                          >
+                            {isOwned ? (
+                              <>
+                                <span>En Biblioteca</span>
+                                <FontAwesomeIcon icon={faShoppingCart} className="ml-2" />
+                              </>
+                            ) : (
+                              <>
+                                <span>{game.price}</span>
+                                <FontAwesomeIcon icon={faShoppingCart} className="ml-2" />
+                              </>
+                            )}
+                          </button>
+                        </motion.div>
+                      </div>
+                    </motion.div>
+                  );
+                })}
             </div>
           </div>
         </div>
-
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 }
