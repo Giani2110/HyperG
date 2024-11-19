@@ -40,6 +40,8 @@ function Profile() {
     setError(null);
     setSuccessMessage("");
 
+    console.log(user);
+
     const updatedUser = {
       ...user,
       username,

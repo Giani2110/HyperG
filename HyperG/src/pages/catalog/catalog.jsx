@@ -12,6 +12,7 @@ function Catalog() {
   const [search, setSearch] = useState("");
   const [genre, setGenre] = useState("");
   const [platform, setPlatform] = useState("");
+  const { addLibraryGame } = useAuth();
   const [price, setPrice] = useState("");
   const [userLibrary, setUserLibrary] = useState([]);
 
@@ -57,6 +58,8 @@ function Catalog() {
     try {
       const userId = user.id;
       const updatedLibrary = [...userLibrary, game];
+      addLibraryGame(game);
+
       await axios.patch(`http://localhost:5000/users/${userId}`, { library: updatedLibrary });
 
       setUserLibrary(updatedLibrary);

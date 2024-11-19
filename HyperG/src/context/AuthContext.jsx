@@ -25,8 +25,18 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem('user');
   };
 
+  const addLibraryGame = (game) => {
+    if (user) {
+      const updatedLibrary = [...user.library, game];
+      setUser({ ...user, library: updatedLibrary });
+      localStorage.setItem('user', JSON.stringify({ ...user, library: updatedLibrary }));
+      console.log("Juego agregado a la biblioteca:", game);
+      console.log(user);
+    }
+  };
+
   return (
-    <AuthContext.Provider value={{ user, login, logout, loading }}>
+    <AuthContext.Provider value={{ user, login, addLibraryGame, logout, loading }}>
       {children}
     </AuthContext.Provider>
   );

@@ -35,7 +35,7 @@ function Library() {
     Swal.fire({
       title: 'Instalando...',
       html: 'Espera un momento mientras instalamos el juego',
-      timer: 7000,
+      timer: 3000,
       timerProgressBar: true,
       didOpen: () => {
         Swal.showLoading();

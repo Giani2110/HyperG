@@ -26,24 +26,159 @@
           "platform": "Console",
           "img": "https://imgs.search.brave.com/3TIR95xDX1gxBYuO3TtahMTK4M21ARh55D0MsUK59bQ/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMuaGJvLmNvbS8y/MDI0LTAzL1RoZUxh/c3RvZlVzXzI1NjB4/Mzg0MC1jLmpwZw",
           "installed": false
+        },
+        {
+          "id": "2",
+          "title": "The Witcher 3",
+          "genre": "RPG",
+          "price": "$19.99",
+          "rating": 4.8,
+          "platform": "PC",
+          "img": "https://imgs.search.brave.com/CQ6Ro42dLKO1LCYzLb7tfJNrHhNXBuYGsDPdsfSHBIw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aG9iYnljb25zb2xh/cy5jb20vc2l0ZXMv/bmF2aS5heGVsc3By/aW5nZXIuZXMvcHVi/bGljL21lZGlhL2lt/YWdlLzIwMTYvMDcv/d2l0Y2hlci0zLXdp/bGQtaHVudC1jYXJh/dHVsYS5qcGc_dGY9/Mzg0MHg"
+        },
+        {
+          "id": "16",
+          "title": "Call of Duty: Infinite Warfare",
+          "genre": "Action",
+          "price": "Free",
+          "rating": 4.5,
+          "platform": "PC",
+          "img": "https://imgs.search.brave.com/sxR0xkJRs6xoaLV0798IHxRHNxfgy6XVccKI_7jtlKg/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzU3L2Ix/L2Y3LzU3YjFmNzQ2/ODc5YWMzZDkwMzhi/MjRmZTJiMDBjMWYy/LmpwZw"
         }
       ]
     },
     {
-      "id": "1b93",
+      "id": "6be9",
+      "username": "Felei",
+      "email": "Felei@gmail.com",
+      "password": "Felei1234",
+      "type": "client",
+      "library": [
+        {
+          "id": "1",
+          "title": "Cyberpunk 2077",
+          "genre": "RPG",
+          "price": "$29.99",
+          "rating": 4.5,
+          "platform": "PC",
+          "img": "https://imgs.search.brave.com/h51q0JqTASWIFrslgsv45V0gBscRHfHzkndIutRlRnI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aG9iYnljb25zb2xh/cy5jb20vc2l0ZXMv/bmF2aS5heGVsc3By/aW5nZXIuZXMvcHVi/bGljL21lZGlhL2lt/YWdlLzIwMjAvMDIv/Y3liZXJwdW5rLTIw/NzctcG9ydGFkYS1m/aWNoYS0wMS0xODc3/MzU3LmpwZz90Zj0z/ODQweA",
+          "installed": false
+        }
+      ]
+    },
+    {
+      "id": "b754",
+      "username": "ElRulooooooooo",
+      "email": "Rulo@Rulo.com.es",
+      "password": "Rulo1234",
+      "type": "client",
+      "library": []
+    },
+    {
+      "id": "2671",
+      "username": "Lopez",
+      "email": "Lopez@gmail.com",
+      "password": "Lopez1234",
+      "type": "client",
+      "library": [
+        {
+          "id": "1",
+          "title": "Cyberpunk 2077",
+          "genre": "RPG",
+          "price": "$29.99",
+          "rating": 4.5,
+          "platform": "PC",
+          "img": "https://imgs.search.brave.com/h51q0JqTASWIFrslgsv45V0gBscRHfHzkndIutRlRnI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aG9iYnljb25zb2xh/cy5jb20vc2l0ZXMv/bmF2aS5heGVsc3By/aW5nZXIuZXMvcHVi/bGljL21lZGlhL2lt/YWdlLzIwMjAvMDIv/Y3liZXJwdW5rLTIw/NzctcG9ydGFkYS1m/aWNoYS0wMS0xODc3/MzU3LmpwZz90Zj0z/ODQweA"
+        }
+      ]
+    },
+    {
+      "id": "8e4f",
       "username": "Axel",
-      "email": "Axel@gmail.com",
+      "email": "Axel@gmail.com.ar",
       "password": "Axel1234",
       "type": "client",
       "library": [
         {
-          "id": "29",
-          "title": "Hollow Knight",
+          "id": "1",
+          "title": "Cyberpunk 2077",
+          "genre": "RPG",
+          "price": "$29.99",
+          "rating": 4.5,
+          "platform": "PC",
+          "img": "https://imgs.search.brave.com/h51q0JqTASWIFrslgsv45V0gBscRHfHzkndIutRlRnI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aG9iYnljb25zb2xh/cy5jb20vc2l0ZXMv/bmF2aS5heGVsc3By/aW5nZXIuZXMvcHVi/bGljL21lZGlhL2lt/YWdlLzIwMjAvMDIv/Y3liZXJwdW5rLTIw/NzctcG9ydGFkYS1m/aWNoYS0wMS0xODc3/MzU3LmpwZz90Zj0z/ODQweA"
+        },
+        {
+          "id": "5",
+          "title": "The Last of Us",
           "genre": "Action",
-          "price": "$14.99",
+          "price": "$49.99",
+          "rating": 4.7,
+          "platform": "Console",
+          "img": "https://imgs.search.brave.com/3TIR95xDX1gxBYuO3TtahMTK4M21ARh55D0MsUK59bQ/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMuaGJvLmNvbS8y/MDI0LTAzL1RoZUxh/c3RvZlVzXzI1NjB4/Mzg0MC1jLmpwZw"
+        },
+        {
+          "id": "2",
+          "title": "The Witcher 3",
+          "genre": "RPG",
+          "price": "$19.99",
           "rating": 4.8,
           "platform": "PC",
-          "img": "https://imgs.search.brave.com/qe2OCTU3HjCUAi-SSBBr6pUnfR7nzJ4Kgl8rbDJPjOI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXIuZm9yZnVu/LmNvbS9mZXRjaC9l/Yi9lYjUxYTI0N2Rl/MDMzZDc3NTE4ZWRh/YjAyYjhlMWVlNy5q/cGVn"
+          "img": "https://imgs.search.brave.com/CQ6Ro42dLKO1LCYzLb7tfJNrHhNXBuYGsDPdsfSHBIw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aG9iYnljb25zb2xh/cy5jb20vc2l0ZXMv/bmF2aS5heGVsc3By/aW5nZXIuZXMvcHVi/bGljL21lZGlhL2lt/YWdlLzIwMTYvMDcv/d2l0Y2hlci0zLXdp/bGQtaHVudC1jYXJh/dHVsYS5qcGc_dGY9/Mzg0MHg"
+        }
+      ]
+    },
+    {
+      "id": "130d",
+      "username": "Gero de Hollywood",
+      "email": "Gero@gmail.com",
+      "password": "Gero1234",
+      "type": "client",
+      "library": [
+        {
+          "id": "1",
+          "title": "Cyberpunk 2077",
+          "genre": "RPG",
+          "price": "$29.99",
+          "rating": 4.5,
+          "platform": "PC",
+          "img": "https://imgs.search.brave.com/h51q0JqTASWIFrslgsv45V0gBscRHfHzkndIutRlRnI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aG9iYnljb25zb2xh/cy5jb20vc2l0ZXMv/bmF2aS5heGVsc3By/aW5nZXIuZXMvcHVi/bGljL21lZGlhL2lt/YWdlLzIwMjAvMDIv/Y3liZXJwdW5rLTIw/NzctcG9ydGFkYS1m/aWNoYS0wMS0xODc3/MzU3LmpwZz90Zj0z/ODQweA"
+        },
+        {
+          "id": "2",
+          "title": "The Witcher 3",
+          "genre": "RPG",
+          "price": "$19.99",
+          "rating": 4.8,
+          "platform": "PC",
+          "img": "https://imgs.search.brave.com/CQ6Ro42dLKO1LCYzLb7tfJNrHhNXBuYGsDPdsfSHBIw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aG9iYnljb25zb2xh/cy5jb20vc2l0ZXMv/bmF2aS5heGVsc3By/aW5nZXIuZXMvcHVi/bGljL21lZGlhL2lt/YWdlLzIwMTYvMDcv/d2l0Y2hlci0zLXdp/bGQtaHVudC1jYXJh/dHVsYS5qcGc_dGY9/Mzg0MHg"
+        },
+        {
+          "id": "25",
+          "title": "Sekiro: Shadows Die Twice",
+          "genre": "Action",
+          "price": "$59.99",
+          "rating": 4.9,
+          "platform": "PC",
+          "img": "https://imgs.search.brave.com/wbb2As54QRYyUiYKJqUWnO7PwI3udrHmPnF6P3FlQRw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1Qk16RmlNMlkz/Tm1NdE5EWTNNQzAw/TVRoaExXRmhObVl0/WmpJek1ETmpabU5o/TVRkaFhrRXlYa0Zx/Y0djQC5qcGc"
+        },
+        {
+          "id": "16",
+          "title": "Call of Duty: Infinite Warfare",
+          "genre": "Action",
+          "price": "Free",
+          "rating": 4.5,
+          "platform": "PC",
+          "img": "https://imgs.search.brave.com/sxR0xkJRs6xoaLV0798IHxRHNxfgy6XVccKI_7jtlKg/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzU3L2Ix/L2Y3LzU3YjFmNzQ2/ODc5YWMzZDkwMzhi/MjRmZTJiMDBjMWYy/LmpwZw"
+        },
+        {
+          "id": "31",
+          "title": "Great Toy Showdown",
+          "genre": "Action",
+          "price": "Free",
+          "rating": 4,
+          "platform": "PC",
+          "img": "https://files.oaiusercontent.com/file-KX6aLwedMUqBCD1BFMf3MfNm?se=2024-11-13T16%3A59%3A10Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Da03d1644-f3ef-4559-9cdc-eab053dbd077.webp&sig=2ExJ0imjU9FvRicGfVKCYmfsbAp6PL%2Bcdg7IIC1jEvs%3D"
         }
       ]
     }
@@ -318,6 +453,15 @@
       "rating": 4.6,
       "platform": "Console",
       "img": "https://imgs.search.brave.com/vN1qZCoJjuoijcOfKY7b17SDVhwXJYRQhmZEGUAV_9I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1QlpqZGlZakpt/TkRndFl6Z3hNUzAw/TmprNExXRXpabU10/Tm1WallXTmpOREpr/WmpWaVhrRXlYa0Zx/Y0djQC5qcGc"
+    },
+    {
+      "id": "31",
+      "title": "Great Toy Showdown",
+      "genre": "Action",
+      "price": "Free",
+      "rating": 4,
+      "platform": "PC",
+      "img": "https://files.oaiusercontent.com/file-KX6aLwedMUqBCD1BFMf3MfNm?se=2024-11-13T16%3A59%3A10Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Da03d1644-f3ef-4559-9cdc-eab053dbd077.webp&sig=2ExJ0imjU9FvRicGfVKCYmfsbAp6PL%2Bcdg7IIC1jEvs%3D"
     }
   ]
 }
