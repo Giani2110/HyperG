@@ -91,6 +91,46 @@ function Dashboard() {
     }
   };
 
+  const handleDeleteGame = async (gameId) => {
+    const result = await Swal.fire({
+      title: "¿Estás seguro?",
+      text: "No podrás deshacer esta acción.",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Sí, eliminarlo",
+      cancelButtonText: "Cancelar",
+      background: "#2d2d2d",
+      color: "#ffffff",
+      customClass: {
+        confirmButton: 'swal2-confirm bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-md text-sm transition duration-300',
+        cancelButton: 'swal2-cancel bg-gray-600 hover:bg-gray-700 text-white py-2 px-4 rounded-md text-sm transition duration-300'
+      }
+    });
+
+    if (result.isConfirmed) {
+      try {
+        await axios.delete(`http://localhost:5000/games/${gameId}`);
+        setGames((prevGames) => prevGames.filter((game) => game.id !== gameId));
+        Swal.fire({
+          title: "Juego eliminado",
+          text: "El juego ha sido eliminado correctamente.",
+          icon: "success",
+          background: "#2d2d2d",
+          color: "#ffffff",
+        });
+      } catch (error) {
+        console.error("Error al eliminar el juego:", error);
+        Swal.fire({
+          title: "Error",
+          text: "No se pudo eliminar el juego. Por favor, inténtelo nuevamente.",
+          icon: "error",
+          background: "#2d2d2d",
+          color: "#ffffff",
+        });
+      }
+    }
+  };
+
   const filteredGames = games.filter((game) =>
     game.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -145,12 +185,20 @@ function Dashboard() {
               <span className="text-gray-400 text-sm mt-2">
                 Calificación: {game.rating} / 5
               </span>
-              <button
-                onClick={() => handleEditGame(game)}
-                className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 mt-auto rounded-md text-sm transition duration-300"
-              >
-                Editar
-              </button>
+              <div className="mt-auto flex space-x-2">
+                <button
+                  onClick={() => handleEditGame(game)}
+                  className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md text-sm transition duration-300"
+                >
+                  Editar
+                </button>
+                <button
+                  onClick={() => handleDeleteGame(game.id)}
+                  className="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-md text-sm transition duration-300"
+                >
+                  Eliminar
+                </button>
+              </div>
             </motion.div>
           ))}
         </div>

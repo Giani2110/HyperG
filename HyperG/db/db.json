@@ -23,7 +23,7 @@
       "id": "2",
       "title": "The Witcher 3",
       "genre": "RPG",
-      "price": "$9.99",
+      "price": "$19.99",
       "rating": "4.8",
       "platform": "PC",
       "img": "https://imgs.search.brave.com/CQ6Ro42dLKO1LCYzLb7tfJNrHhNXBuYGsDPdsfSHBIw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aG9iYnljb25zb2xh/cy5jb20vc2l0ZXMv/bmF2aS5heGVsc3By/aW5nZXIuZXMvcHVi/bGljL21lZGlhL2lt/YWdlLzIwMTYvMDcv/d2l0Y2hlci0zLXdp/bGQtaHVudC1jYXJh/dHVsYS5qcGc_dGY9/Mzg0MHg"
@@ -41,7 +41,7 @@
       "id": "4",
       "title": "Elden Ring",
       "genre": "Adventure",
-      "price": "$59.99",
+      "price": "$49.99",
       "rating": "4.9",
       "platform": "Console",
       "img": "https://imgs.search.brave.com/uUKfAt8mU1YGdCbRCPltif27qxF7kEfyikIffKEtG04/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMud2lraWEubm9j/b29raWUubmV0L2Vs/ZGVucmluZy9pbWFn/ZXMvMC8wZC9FbGRl/bl9SaW5nX1BvcnRh/ZGEuanBnL3Jldmlz/aW9uL2xhdGVzdC9z/Y2FsZS10by13aWR0/aC1kb3duLzMwMD9j/Yj0yMDIzMDMzMTIy/MzgwNCZwYXRoLXBy/ZWZpeD1lcw.jpeg"
@@ -279,6 +279,24 @@
       "rating": 4.6,
       "platform": "Console",
       "img": "https://imgs.search.brave.com/vN1qZCoJjuoijcOfKY7b17SDVhwXJYRQhmZEGUAV_9I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1QlpqZGlZakpt/TkRndFl6Z3hNUzAw/TmprNExXRXpabU10/Tm1WallXTmpOREpr/WmpWaVhrRXlYa0Zx/Y0djQC5qcGc"
+    },
+    {
+      "id": "31",
+      "title": "Ultimate Chicken Horse",
+      "genre": "Action",
+      "price": "$3.99",
+      "rating": "4.2",
+      "platform": "PC",
+      "img": "https://imgs.search.brave.com/x0IlSKMH4wdyLy8_x24Y7eUEhVenC60XltqHKhXpB2s/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jb21w/dS1wYy5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMTYvMDMv/VWx0aW1hdGUtQ2hp/Y2tlbi1Ib3JzZS1Q/Qy1wb3J0YWRhLmpw/Zw"
+    },
+    {
+      "id": "32",
+      "title": "League of Legends",
+      "genre": "Action",
+      "price": "Free",
+      "rating": "4.5",
+      "platform": "PC",
+      "img": "https://imgs.search.brave.com/dzjoBUdxClMh186c1LP16updl4rVrdmlWHG5CraA2Ts/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90MS5w/aXhlcnMucGljcy9p/bWctMWZiNmY2N2Mv/cG9zdGVycy1sZWFn/dWUtb2YtbGVnZW5k/cy5qcGc_SDRzSUFB/QUFBQUFBQTNXT1My/NkVNQkJFcjJNa29O/djR6dzFtTnpkQXhq/WVRFajZXN1VsR09Y/Mk1vaXlqWG5SWFNk/WDE0SGxrdXdSdzRT/Z2h3YjU2dndWWTFx/MnFQS2FRMS05QXNH/VnFhTWJxYmdRUm1f/SDhETW1sTTVLT21y/YWpuTFdTMDFaUTFZ/eGZ0aVozbXo3SVd5/a3hqd0NaOVhGOTFY/ZDF1UXh1enpBZ1ZZ/QWFoTkZHVTdhZ2tX/eWU0dGJsWWc5dmst/LTRlREhzNF9Gbzha/cm1ENFVqdHZ4Q0tH/bmRTV1U2YTFraDdf/SFJ3RC1GdnpmVUZO/eHZRQkdVQkhISjZY/NmpxS1NZbU5iR1dt/NTlDSU1YWXZCdU5w/NTd4UVZ6VWdveGlW/bloyYzZJWHFPYi1o/OTN1MnVnTlFFQUFB/PT0"
     }
   ]
 }
