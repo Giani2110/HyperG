@@ -16,32 +16,39 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     if (!email || !password) {
       toast.error('Por favor ingresa tu email y contraseña');
       return;
     }
-
+  
     try {
       const response = await fetch('http://localhost:5000/users');
       const data = await response.json();
       const user = data.find(
         (user) => user.email === email && user.password === password
       );
-
+  
       if (!user) {
         toast.error('Correo electrónico o contraseña incorrectos');
         return;
       }
-
+  
       login(user);
       toast.success('¡Inicio de sesión exitoso!');
-      navigate('/catalog');
+
+      if (user.type === 'client') {
+        navigate('/catalog');
+      } else if (user.type === 'admin') {
+        navigate('/dashboard');
+      } else {
+        toast.error('Tipo de usuario no reconocido. Contacta al administrador.');
+      }
     } catch (error) {
       console.error('Error al hacer la solicitud:', error);
       toast.error('Hubo un error al conectar con el servidor');
     }
-  };
+  };  
 
   return (
     <div className="bg-gray-900 min-h-screen flex items-center justify-center">

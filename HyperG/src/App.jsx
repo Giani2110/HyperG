@@ -11,6 +11,9 @@ import UserLayout from './layout/UserLayout.jsx';
 import Profile from './pages/profile/profile.jsx';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './context/ProtectedRoute';
+import AdminLayout from './layout/AdminLayout.jsx';
+import Dashboard from './pages/dashboard/dashboard.jsx';
+
 
 function App() {
   return (
@@ -30,6 +33,11 @@ function App() {
                 <Route path="/library" element={<ProtectedRoute allowedRoles={['client']}><Library /></ProtectedRoute>} />
                 <Route path="/profile" element={<ProtectedRoute allowedRoles={['client']}><Profile /></ProtectedRoute>} />
               </Route>
+
+              <Route element={<AdminLayout />}>
+                <Route path="/dashboard" element={<ProtectedRoute allowedRoles={['admin']}><Dashboard /></ProtectedRoute>} />
+              </Route>
+
             </Routes>
           </main>
         </div>
