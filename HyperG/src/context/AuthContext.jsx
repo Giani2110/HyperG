@@ -4,8 +4,8 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true); // Estado para saber si estamos cargando el usuario
-
+  const [loading, setLoading] = useState(true);
+  
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
   const login = (userData) => {
     console.log("Saving user data:", userData);
     setUser(userData);
-    localStorage.setItem('user', JSON.stringify(userData));
+    localStorage.setItem('user', JSON.stringify(userData)); // Guardamos todo el objeto de usuario
   };
 
   const logout = () => {
@@ -28,10 +28,10 @@ export const AuthProvider = ({ children }) => {
   const addLibraryGame = (game) => {
     if (user) {
       const updatedLibrary = [...user.library, game];
-      setUser({ ...user, library: updatedLibrary });
-      localStorage.setItem('user', JSON.stringify({ ...user, library: updatedLibrary }));
+      const updatedUser = { ...user, library: updatedLibrary }; // No sobrescribir el resto de los datos
+      setUser(updatedUser);
+      localStorage.setItem('user', JSON.stringify(updatedUser)); // Guardamos el usuario actualizado
       console.log("Juego agregado a la biblioteca:", game);
-      console.log(user);
     }
   };
 

@@ -14,6 +14,7 @@ import ProtectedRoute from './context/ProtectedRoute';
 import AdminLayout from './layout/AdminLayout.jsx';
 import Dashboard from './pages/dashboard/dashboard.jsx';
 import AddGames from './pages/addgames/addgames.jsx';
+import ViewUsers from './pages/viewusers/viewusers.jsx';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
               <Route element={<AdminLayout />}>
                 <Route path="/dashboard" element={<ProtectedRoute allowedRoles={['admin']}><Dashboard /></ProtectedRoute>} />
                 <Route path="/addgames" element={<ProtectedRoute allowedRoles={['admin']}><AddGames /></ProtectedRoute>} />
+                <Route path="/viewusers" element={<ProtectedRoute allowedRoles={['admin']}><ViewUsers /></ProtectedRoute>} />
               </Route>
 
             </Routes>

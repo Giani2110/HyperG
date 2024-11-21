@@ -7,6 +7,58 @@
       "password": "Giani1234",
       "type": "admin",
       "library": []
+    },
+    {
+      "id": "1234",
+      "username": "Pedro",
+      "email": "Pedro@gmail.com",
+      "password": "Pedro1234",
+      "type": "client",
+      "library": []
+    },
+    {
+      "id": "5678",
+      "username": "Maria",
+      "email": "Maria@gmail.com",
+      "password": "Maria1234",
+      "type": "admin",
+      "library": []
+    },
+    {
+      "id": "9012",
+      "username": "Jose",
+      "email": "Jose@gmail.com",
+      "password": "Jose1234",
+      "type": "client",
+      "library": [
+        {
+          "id": "1",
+          "title": "Cyberpunk 2077",
+          "genre": "RPG",
+          "price": "$19.99",
+          "rating": "4.5",
+          "platform": "PC",
+          "img": "https://imgs.search.brave.com/h51q0JqTASWIFrslgsv45V0gBscRHfHzkndIutRlRnI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aG9iYnljb25zb2xh/cy5jb20vc2l0ZXMv/bmF2aS5heGVsc3By/aW5nZXIuZXMvcHVi/bGljL21lZGlhL2lt/YWdlLzIwMjAvMDIv/Y3liZXJwdW5rLTIw/NzctcG9ydGFkYS1m/aWNoYS0wMS0xODc3/MzU3LmpwZz90Zj0z/ODQweA"
+        },
+        {
+          "id": "7",
+          "title": "Grand Theft Auto V",
+          "genre": "Action",
+          "price": "$19.99",
+          "rating": "4.8",
+          "platform": "PC",
+          "img": "https://imgs.search.brave.com/PYbKN8RnZ6FGjNzMSUV8iCV7qlbmxON-csx1s2qBzGU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzhkL2Ey/LzJiLzhkYTIyYjBk/MjU2ODM4NWI5MzVj/ZWM4YzU5MGI4MmVk/LmpwZw"
+        },
+        {
+          "id": "10",
+          "title": "The Legend of Zelda: Tears of the Kingdom",
+          "genre": "Adventure",
+          "price": "$49.99",
+          "rating": 4.6,
+          "platform": "Console",
+          "img": "https://imgs.search.brave.com/SNnn7FjmuIqfam_1ZOxgQTQcB0fQA1-ElLLVAgch7jA/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9uaW50/aGVvcmlzdC5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMjQv/MDcvemVsZGFfZWNo/b2VzLW9mLXdpc2Rv/bV9ib3hhcnQuanBn/P3c9NjMy"
+        }
+      ]
     }
   ],
   "games": [
@@ -33,7 +85,7 @@
       "title": "Red Dead Redemption 2",
       "genre": "Action",
       "price": "$29.99",
-      "rating": "4.6",
+      "rating": "4.7",
       "platform": "Console",
       "img": "https://imgs.search.brave.com/PppndanAZDWqkvpy2R4MyCIm-Glv-WaCzh3dDrFS7DM/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aG9iYnljb25zb2xh/cy5jb20vc2l0ZXMv/bmF2aS5heGVsc3By/aW5nZXIuZXMvcHVi/bGljL21lZGlhL2lt/YWdlLzIwMTYvMTAv/cmVkLWRlYWQtcmVk/ZW1wdGlvbi0yLWNh/cmF0dWxhLXByb3Zp/c2lvbmFsLmpwZz90/Zj0zODQweA"
     },
@@ -288,15 +340,6 @@
       "rating": "4.2",
       "platform": "PC",
       "img": "https://imgs.search.brave.com/x0IlSKMH4wdyLy8_x24Y7eUEhVenC60XltqHKhXpB2s/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jb21w/dS1wYy5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMTYvMDMv/VWx0aW1hdGUtQ2hp/Y2tlbi1Ib3JzZS1Q/Qy1wb3J0YWRhLmpw/Zw"
-    },
-    {
-      "id": "32",
-      "title": "League of Legends",
-      "genre": "Action",
-      "price": "Free",
-      "rating": "4.5",
-      "platform": "PC",
-      "img": "https://imgs.search.brave.com/dzjoBUdxClMh186c1LP16updl4rVrdmlWHG5CraA2Ts/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90MS5w/aXhlcnMucGljcy9p/bWctMWZiNmY2N2Mv/cG9zdGVycy1sZWFn/dWUtb2YtbGVnZW5k/cy5qcGc_SDRzSUFB/QUFBQUFBQTNXT1My/NkVNQkJFcjJNa29O/djR6dzFtTnpkQXhq/WVRFajZXN1VsR09Y/Mk1vaXlqWG5SWFNk/WDE0SGxrdXdSdzRT/Z2h3YjU2dndWWTFx/MnFQS2FRMS05QXNH/VnFhTWJxYmdRUm1f/SDhETW1sTTVLT21y/YWpuTFdTMDFaUTFZ/eGZ0aVozbXo3SVd5/a3hqd0NaOVhGOTFY/ZDF1UXh1enpBZ1ZZ/QWFoTkZHVTdhZ2tX/eWU0dGJsWWc5dmst/LTRlREhzNF9Gbzha/cm1ENFVqdHZ4Q0tH/bmRTV1U2YTFraDdf/SFJ3RC1GdnpmVUZO/eHZRQkdVQkhISjZY/NmpxS1NZbU5iR1dt/NTlDSU1YWXZCdU5w/NTd4UVZ6VWdveGlW/bloyYzZJWHFPYi1o/OTN1MnVnTlFFQUFB/PT0"
     }
   ]
 }
