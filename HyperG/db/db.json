@@ -59,6 +59,87 @@
           "img": "https://imgs.search.brave.com/SNnn7FjmuIqfam_1ZOxgQTQcB0fQA1-ElLLVAgch7jA/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9uaW50/aGVvcmlzdC5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMjQv/MDcvemVsZGFfZWNo/b2VzLW9mLXdpc2Rv/bV9ib3hhcnQuanBn/P3c9NjMy"
         }
       ]
+    },
+    {
+      "id": "ffa3",
+      "username": "Carolina",
+      "email": "Caro@gmail.com",
+      "password": "Caro1234",
+      "type": "admin",
+      "library": [
+        {
+          "id": "1",
+          "title": "Cyberpunk 2077",
+          "genre": "RPG",
+          "price": "$19.99",
+          "rating": "4.5",
+          "platform": "PC",
+          "img": "https://imgs.search.brave.com/h51q0JqTASWIFrslgsv45V0gBscRHfHzkndIutRlRnI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aG9iYnljb25zb2xh/cy5jb20vc2l0ZXMv/bmF2aS5heGVsc3By/aW5nZXIuZXMvcHVi/bGljL21lZGlhL2lt/YWdlLzIwMjAvMDIv/Y3liZXJwdW5rLTIw/NzctcG9ydGFkYS1m/aWNoYS0wMS0xODc3/MzU3LmpwZz90Zj0z/ODQweA"
+        },
+        {
+          "id": "7",
+          "title": "Grand Theft Auto V",
+          "genre": "Action",
+          "price": "$19.99",
+          "rating": "4.8",
+          "platform": "PC",
+          "img": "https://imgs.search.brave.com/PYbKN8RnZ6FGjNzMSUV8iCV7qlbmxON-csx1s2qBzGU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzhkL2Ey/LzJiLzhkYTIyYjBk/MjU2ODM4NWI5MzVj/ZWM4YzU5MGI4MmVk/LmpwZw"
+        },
+        {
+          "id": "11",
+          "title": "Minecraft",
+          "genre": "Adventure",
+          "price": "$16.99",
+          "rating": "4.9",
+          "platform": "PC",
+          "img": "https://imgs.search.brave.com/XQ6TR2OpmKpaNuyCQa64VVHRkESjMya736CZgVGActE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9wcmV2/aWV3LnJlZGQuaXQv/dDQxOGp2Mzl3dzc1/MS5wbmc_d2lkdGg9/NjQwJmNyb3A9c21h/cnQmYXV0bz13ZWJw/JnM9OGJmZTdjZDVh/N2ZjZjI0MmI3ZThi/NjIwYjU1YWU4Yjlj/MDQzNGNhZg"
+        }
+      ]
+    },
+    {
+      "id": "5459",
+      "username": "Miguel",
+      "email": "Miguel@gmail.com",
+      "password": "Miguel1234",
+      "type": "client",
+      "library": [
+        {
+          "id": "30",
+          "title": "Assassin's Creed Valhalla",
+          "genre": "Action",
+          "price": "$39.99",
+          "rating": 4.6,
+          "platform": "Console",
+          "img": "https://imgs.search.brave.com/vN1qZCoJjuoijcOfKY7b17SDVhwXJYRQhmZEGUAV_9I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1QlpqZGlZakpt/TkRndFl6Z3hNUzAw/TmprNExXRXpabU10/Tm1WallXTmpOREpr/WmpWaVhrRXlYa0Zx/Y0djQC5qcGc"
+        },
+        {
+          "id": "26",
+          "title": "Dead by Daylight",
+          "genre": "Action",
+          "price": "$19.99",
+          "rating": 4.2,
+          "platform": "PC",
+          "img": "https://imgs.search.brave.com/_lxI0gM4vrNj8mmuN-J51czdTpE8DkS9uOWUa_00MMk/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC93cDIyMjIz/MjkuanBn"
+        },
+        {
+          "id": "22",
+          "title": "Animal Crossing: New Horizons",
+          "genre": "RPG",
+          "price": "$59.99",
+          "rating": 4.8,
+          "platform": "Console",
+          "img": "https://imgs.search.brave.com/BbTSeyL5e3lL87NhmBs6Fn7iaHGZZxLr97ZZLRC35jg/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS52YW5kYWwubmV0/L3QyMDAvNjU1NTcv/YW5pbWFsLWNyb3Nz/aW5nLW5ldy1ob3Jp/em9ucy0yMDIwMTEw/MTIzNzU2NjdfMS5q/cGc"
+        },
+        {
+          "id": "1",
+          "title": "Cyberpunk 2077",
+          "genre": "RPG",
+          "price": "$17.99",
+          "rating": "4.5",
+          "platform": "PC",
+          "img": "https://imgs.search.brave.com/h51q0JqTASWIFrslgsv45V0gBscRHfHzkndIutRlRnI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aG9iYnljb25zb2xh/cy5jb20vc2l0ZXMv/bmF2aS5heGVsc3By/aW5nZXIuZXMvcHVi/bGljL21lZGlhL2lt/YWdlLzIwMjAvMDIv/Y3liZXJwdW5rLTIw/NzctcG9ydGFkYS1m/aWNoYS0wMS0xODc3/MzU3LmpwZz90Zj0z/ODQweA"
+        }
+      ]
     }
   ],
   "games": [
@@ -66,7 +147,7 @@
       "id": "1",
       "title": "Cyberpunk 2077",
       "genre": "RPG",
-      "price": "$19.99",
+      "price": "$17.99",
       "rating": "4.5",
       "platform": "PC",
       "img": "https://imgs.search.brave.com/h51q0JqTASWIFrslgsv45V0gBscRHfHzkndIutRlRnI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aG9iYnljb25zb2xh/cy5jb20vc2l0ZXMv/bmF2aS5heGVsc3By/aW5nZXIuZXMvcHVi/bGljL21lZGlhL2lt/YWdlLzIwMjAvMDIv/Y3liZXJwdW5rLTIw/NzctcG9ydGFkYS1m/aWNoYS0wMS0xODc3/MzU3LmpwZz90Zj0z/ODQweA"

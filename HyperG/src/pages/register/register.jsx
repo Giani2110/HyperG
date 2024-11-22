@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { TextField, Button, Box, Container, Typography } from "@mui/material";
+import { TextField, Button, Box, Container, Typography, InputAdornment } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
+import { faUser, faEnvelope, faLock, faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ToastContainer, toast } from "react-toastify";
@@ -36,34 +36,31 @@ function Register() {
       return;
     }
 
-    const response = await fetch("http://localhost:5000/users");
-    const data = await response.json();
-    const emails = data.map((user) => user.email);
-
-    if (emails.includes(email)) {
-      toast.error("El correo electrónico ya existe");
-      return;
-    }
-
-    const userData = {
-      username,
-      email,
-      password,
-      type: "client",
-      library: [],
-    };
-
     try {
-      const response = await fetch("http://localhost:5000/users", {
+      const response = await fetch("http://localhost:5000/users");
+      const data = await response.json();
+      const emails = data.map((user) => user.email);
+
+      if (emails.includes(email)) {
+        toast.error("El correo electrónico ya existe");
+        return;
+      }
+
+      const userData = {
+        username,
+        email,
+        password,
+        type: "client",
+        library: [],
+      };
+
+      const registerResponse = await fetch("http://localhost:5000/users", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(userData),
       });
 
-      if (response.ok) {
-        const data = await response.json();
+      if (registerResponse.ok) {
         toast.success("¡Registro exitoso! Ahora puedes iniciar sesión.");
       } else {
         toast.error("Hubo un error al registrar al usuario");
@@ -75,7 +72,10 @@ function Register() {
   };
 
   return (
-    <div className="bg-gray-900 min-h-screen flex items-center justify-center">
+    <div className="min-h-screen flex items-center justify-center"
+    style={{
+      background: 'linear-gradient(135deg, #1e3a8a, #1e293b)',
+    }}>
       <Container maxWidth="sm" className="bg-gray-800 p-8 rounded-lg shadow-lg">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -90,7 +90,7 @@ function Register() {
 
         <form>
           <motion.div
-            className="mb-2"
+            className="mb-3"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -99,30 +99,28 @@ function Register() {
               label="Nombre de Usuario"
               variant="outlined"
               fullWidth
-              className="bg-gray-700 text-white"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <FontAwesomeIcon icon={faUser} className="text-white" />
+                  </InputAdornment>
+                ),
+              }}
               sx={{
-                "& .MuiInputLabel-root": {
-                  color: "white",
-                },
+                "& .MuiInputLabel-root": { color: "white" },
                 "& .MuiOutlinedInput-root": {
-                  "& fieldset": {
-                    borderColor: "white",
-                  },
-                  "&:hover fieldset": {
-                    borderColor: "yellow",
-                  },
-                  "&.Mui-focused fieldset": {
-                    borderColor: "yellow",
-                  },
+                  "& fieldset": { borderColor: "white" },
+                  "&:hover fieldset": { borderColor: "yellow" },
+                  "&.Mui-focused fieldset": { borderColor: "yellow" },
                 },
               }}
             />
           </motion.div>
 
           <motion.div
-            className="mb-2"
+            className="mb-3"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -132,30 +130,28 @@ function Register() {
               type="email"
               variant="outlined"
               fullWidth
-              className="bg-gray-700 text-white"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <FontAwesomeIcon icon={faEnvelope} className="text-white" />
+                  </InputAdornment>
+                ),
+              }}
               sx={{
-                "& .MuiInputLabel-root": {
-                  color: "white",
-                },
+                "& .MuiInputLabel-root": { color: "white" },
                 "& .MuiOutlinedInput-root": {
-                  "& fieldset": {
-                    borderColor: "white",
-                  },
-                  "&:hover fieldset": {
-                    borderColor: "yellow",
-                  },
-                  "&.Mui-focused fieldset": {
-                    borderColor: "yellow",
-                  },
+                  "& fieldset": { borderColor: "white" },
+                  "&:hover fieldset": { borderColor: "yellow" },
+                  "&.Mui-focused fieldset": { borderColor: "yellow" },
                 },
               }}
             />
           </motion.div>
 
           <motion.div
-            className="mb-2"
+            className="mb-3"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
@@ -165,30 +161,28 @@ function Register() {
               type="password"
               variant="outlined"
               fullWidth
-              className="bg-gray-700 text-white"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <FontAwesomeIcon icon={faLock} className="text-white" />
+                  </InputAdornment>
+                ),
+              }}
               sx={{
-                "& .MuiInputLabel-root": {
-                  color: "white",
-                },
+                "& .MuiInputLabel-root": { color: "white" },
                 "& .MuiOutlinedInput-root": {
-                  "& fieldset": {
-                    borderColor: "white",
-                  },
-                  "&:hover fieldset": {
-                    borderColor: "yellow",
-                  },
-                  "&.Mui-focused fieldset": {
-                    borderColor: "yellow",
-                  },
+                  "& fieldset": { borderColor: "white" },
+                  "&:hover fieldset": { borderColor: "yellow" },
+                  "&.Mui-focused fieldset": { borderColor: "yellow" },
                 },
               }}
             />
           </motion.div>
 
           <motion.div
-            className="mb-2"
+            className="mb-3"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -198,23 +192,21 @@ function Register() {
               type="password"
               variant="outlined"
               fullWidth
-              className="bg-gray-700 text-white"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <FontAwesomeIcon icon={faLock} className="text-white" />
+                  </InputAdornment>
+                ),
+              }}
               sx={{
-                "& .MuiInputLabel-root": {
-                  color: "white",
-                },
+                "& .MuiInputLabel-root": { color: "white" },
                 "& .MuiOutlinedInput-root": {
-                  "& fieldset": {
-                    borderColor: "white",
-                  },
-                  "&:hover fieldset": {
-                    borderColor: "yellow",
-                  },
-                  "&.Mui-focused fieldset": {
-                    borderColor: "yellow",
-                  },
+                  "& fieldset": { borderColor: "white" },
+                  "&:hover fieldset": { borderColor: "yellow" },
+                  "&.Mui-focused fieldset": { borderColor: "yellow" },
                 },
               }}
             />
