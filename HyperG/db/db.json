@@ -14,7 +14,65 @@
       "email": "Pedro@gmail.com",
       "password": "Pedro1234",
       "type": "client",
-      "library": []
+      "library": [
+        {
+          "id": "8",
+          "title": "The Legend of Zelda: Breath of the Wild",
+          "genre": "Adventure",
+          "price": "$59.99",
+          "rating": 4.9,
+          "platform": "Console",
+          "img": "https://imgs.search.brave.com/rLPIvNVzp8VxJgCxXk_L1oIMHeFOANuM8sQ98KvNYVc/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS52YW5kYWwubmV0/L3QyMDAvNDMwMzAv/dGhlLWxlZ2VuZC1v/Zi16ZWxkYS1icmVh/dGgtb2YtdGhlLXdp/bGQtMjAxNzMyMTMx/NDI5XzEuanBn",
+          "installed": true
+        },
+        {
+          "id": "2",
+          "title": "The Witcher 3",
+          "genre": "RPG",
+          "price": "$19.99",
+          "rating": "4.8",
+          "platform": "PC",
+          "img": "https://imgs.search.brave.com/CQ6Ro42dLKO1LCYzLb7tfJNrHhNXBuYGsDPdsfSHBIw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aG9iYnljb25zb2xh/cy5jb20vc2l0ZXMv/bmF2aS5heGVsc3By/aW5nZXIuZXMvcHVi/bGljL21lZGlhL2lt/YWdlLzIwMTYvMDcv/d2l0Y2hlci0zLXdp/bGQtaHVudC1jYXJh/dHVsYS5qcGc_dGY9/Mzg0MHg",
+          "installed": true
+        },
+        {
+          "id": "29",
+          "title": "Hollow Knight",
+          "genre": "Action",
+          "price": "$14.99",
+          "rating": 4.8,
+          "platform": "PC",
+          "img": "https://imgs.search.brave.com/qe2OCTU3HjCUAi-SSBBr6pUnfR7nzJ4Kgl8rbDJPjOI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXIuZm9yZnVu/LmNvbS9mZXRjaC9l/Yi9lYjUxYTI0N2Rl/MDMzZDc3NTE4ZWRh/YjAyYjhlMWVlNy5q/cGVn",
+          "installed": true
+        },
+        {
+          "id": "28",
+          "title": "Doom Eternal",
+          "genre": "Shooter",
+          "price": "$39.99",
+          "rating": "4.7",
+          "platform": "PC",
+          "img": "https://imgs.search.brave.com/adgEOOYiuKSUeDLMdedJO46ODPB0jR3ffh-kHLxMJFE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pLmJs/b2dzLmVzL2NkNjI3/Yy9hcHBzLjMzMjM4/LjY0MjM0NTU2OTU4/MzI0MTE0LmY5MjBj/ZWM5LWI0ZmItNDdm/NC1iYmFjLTY2N2Vk/OGJiODJlNi8xMzY2/XzIwMDAuanBlZw"
+        },
+        {
+          "id": "25",
+          "title": "Sekiro: Shadows Die Twice",
+          "genre": "Action",
+          "price": "$59.99",
+          "rating": 4.9,
+          "platform": "PC",
+          "img": "https://imgs.search.brave.com/wbb2As54QRYyUiYKJqUWnO7PwI3udrHmPnF6P3FlQRw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1Qk16RmlNMlkz/Tm1NdE5EWTNNQzAw/TVRoaExXRmhObVl0/WmpJek1ETmpabU5o/TVRkaFhrRXlYa0Zx/Y0djQC5qcGc"
+        },
+        {
+          "id": "18",
+          "title": "Overwatch 2",
+          "genre": "Action",
+          "price": "Free",
+          "rating": "4.4",
+          "platform": "PC",
+          "img": "https://imgs.search.brave.com/xwyPnVpfa6esTLkVdNGApaaVUUK1HJu_9xw9LSjTdx4/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YXByb3h5LnR2dHJv/cGVzLm9yZy93aWR0/aC8xMjAwL2h0dHBz/Oi8vc3RhdGljLnR2/dHJvcGVzLm9yZy9w/bXdpa2kvcHViL2lt/YWdlcy9vdmVyd2F0/Y2hfdHJhY2VyX2Nv/dmVyLmpwZw"
+        }
+      ]
     },
     {
       "id": "5678",
