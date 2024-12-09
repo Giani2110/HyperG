@@ -38,15 +38,15 @@ export const AuthProvider = ({ children }) => {
     });
     const data = await response.json();
 
-    if (!response.status === 200) {
-      toast.error(data.message);
-    } else {
-      toast.success(data.message);
+    if (response.status === 200 && data.token) {
       const decodedToken = jwtDecode(data.token);
       setUser(decodedToken);
       setIsAuthenticated(true);
       localStorage.setItem('token', data.token);
-      navigate('/home');
+      toast.success("¡Inicio de sesión exitoso!");
+      navigate('/catalog');
+    } else {
+      toast.error(data.message || "Error al iniciar sesión");
     }
   };
 
