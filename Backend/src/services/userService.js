@@ -60,7 +60,6 @@ export class UserService {
             email,
             password,
             type: "client",
-            library: [],
           },
         });
     }

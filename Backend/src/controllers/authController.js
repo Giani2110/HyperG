@@ -5,17 +5,25 @@ import { createToken, verifyToken } from "../utils/jwt.js";
 
 export class AuthController {
     static async login(req, res) {
-        const { email, password } = req.body;
-        const user = await UserService.getByEmail(email);
-        if (!user) {
-            return res.status(404).json({ message: "User no encontrado" });
+        try {
+            const { email, password } = req.body;
+            if (!email || !password) {
+                return res.status(400).json({ message: "Todos los campos son obligatorios" });
+            }
+            const user = await UserService.getByEmail(email);
+            if (!user) {
+                return res.status(401).json({ message: "Credenciales incorrectas" });
+            }
+            const isPasswordValid = await comparePassword(password, user.password);
+            if (!isPasswordValid) {
+                return res.status(401).json({ message: "Credenciales incorrectas" });
+            }
+            const token = createToken(user);
+            return res.status(200).json({ token });
+        } catch (error) {
+            console.error("Error en el inicio de sesión:", error);
+            return res.status(500).json({ message: "Error interno del servidor" });
         }
-        const passwordMatch = await comparePassword(password, user.password);
-        if (!passwordMatch) {
-            return res.status(401).json({ message: "Contraseña incorrecta" });
-        }
-        const token = createToken({ id: user.id, email: user.email, username: user.username, type: user.type});
-        return res.status(200).json( token );
     }
 
     static async register(req, res) {
@@ -24,18 +32,18 @@ export class AuthController {
             if (!username || !email || !password) {
                 return res.status(400).json({ message: "Todos los campos son obligatorios" });
             }
-            const user = await UserService.getByEmail(email);
-            if (user) {
-                return res.status(409).json({ message: "Email ya registrado" });
-            }
+    
+            console.log("Creando usuario:", { username, email });
             const hashedPassword = await hashPassword(password);
+            const user = await UserService.create({ username, email, password: hashedPassword });
+            const token = createToken(user);
     
-            await UserService.create({ username, email, password: hashedPassword });
+            console.log("Usuario creado:", user);
     
-            return res.status(201).json({ message: "Usuario creado" });
+            return res.status(201).json({ status: "success", message: "Registro exitoso", token });
         } catch (error) {
-            console.error("Error en el registro:", error);
-            return res.status(500).json({ message: "Error interno del servidor" });
+            console.error("Error al registrar el usuario:", error);
+            return res.status(500).json({ message: "Error interno del servidor", error: error.message });
         }
     }
 }

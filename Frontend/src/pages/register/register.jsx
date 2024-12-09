@@ -6,16 +6,20 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useAuth } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const { register } = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Validaciones de campos
     if (!username || !email || !password || !confirmPassword) {
       toast.error("Por favor complete todos los campos");
       return;
@@ -37,34 +41,9 @@ function Register() {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/users");
-      const data = await response.json();
-      const emails = data.map((user) => user.email);
+      const response = await register(username, email, password);
 
-      if (emails.includes(email)) {
-        toast.error("El correo electrónico ya existe");
-        return;
-      }
-
-      const userData = {
-        username,
-        email,
-        password,
-        type: "client",
-        library: [],
-      };
-
-      const registerResponse = await fetch("http://localhost:5000/users", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(userData),
-      });
-
-      if (registerResponse.ok) {
-        toast.success("¡Registro exitoso! Ahora puedes iniciar sesión.");
-      } else {
-        toast.error("Hubo un error al registrar al usuario");
-      }
+      
     } catch (error) {
       console.error("Error al hacer la solicitud:", error);
       toast.error("Hubo un error en la conexión con el servidor");

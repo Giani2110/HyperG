@@ -14,7 +14,6 @@ import { faEnvelope, faLock, faSignInAlt } from '@fortawesome/free-solid-svg-ico
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useAuth } from '../../context/AuthContext';
-
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -23,39 +22,22 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     if (!email || !password) {
       toast.error('Por favor ingresa tu email y contraseña');
       return;
     }
-
+  
     try {
-      const response = await fetch('http://localhost:5000/users');
-      const data = await response.json();
-      const user = data.find(
-        (user) => user.email === email && user.password === password
-      );
-
-      if (!user) {
-        toast.error('Correo electrónico o contraseña incorrectos');
-        return;
-      }
-
-      login(user);
+      login(email, password);
       toast.success('¡Inicio de sesión exitoso!');
-
-      if (user.type === 'client') {
-        navigate('/catalog');
-      } else if (user.type === 'admin') {
-        navigate('/dashboard');
-      } else {
-        toast.error('Tipo de usuario no reconocido. Contacta al administrador.');
-      }
+      
     } catch (error) {
       console.error('Error al hacer la solicitud:', error);
       toast.error('Hubo un error al conectar con el servidor');
     }
   };
+  
 
   return (
     <div

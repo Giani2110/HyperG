@@ -19,13 +19,14 @@ import ViewUsers from './pages/viewusers/viewusers.jsx';
 
 function App() {
   return (
-    <AuthProvider>
-      <Router>
+    <Router>
+      <AuthProvider>
         <div className="App bg-gray-900 text-white min-h-screen">
           <main className="p-4">
             <Routes>
               <Route element={<LandingLayout />}>
                 <Route path="/" element={<Home />} />
+                <Route path="/home" element={<Home />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
               </Route>
@@ -45,9 +46,8 @@ function App() {
             </Routes>
           </main>
         </div>
-      </Router>
-    </AuthProvider>
-
+      </AuthProvider>
+    </Router>
   );
 }
 
