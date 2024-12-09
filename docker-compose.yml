@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      - POSTGRES_DB=HyperG
+      - POSTGRES_USER=giani
+      - POSTGRES_PASSWORD=1234  
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+
+  pgadmin: #Administrador gráfico
+    image: dpage/pgadmin4:latest 
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=gianfranco.uqz@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=1234
+    ports:
+      - 5050:80
+    volumes:
+      - ./pgadmin_data:/var/lib/pgadmin
