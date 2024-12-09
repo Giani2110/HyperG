@@ -79,7 +79,7 @@
       "username": "Maria",
       "email": "Maria@gmail.com",
       "password": "Maria1234",
-      "type": "admin",
+      "type": "client",
       "library": []
     },
     {
@@ -214,8 +214,8 @@
       "id": "2",
       "title": "The Witcher 3",
       "genre": "RPG",
-      "price": "$19.99",
-      "rating": "4.8",
+      "price": "$9.99",
+      "rating": "4.7",
       "platform": "PC",
       "img": "https://imgs.search.brave.com/CQ6Ro42dLKO1LCYzLb7tfJNrHhNXBuYGsDPdsfSHBIw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aG9iYnljb25zb2xh/cy5jb20vc2l0ZXMv/bmF2aS5heGVsc3By/aW5nZXIuZXMvcHVi/bGljL21lZGlhL2lt/YWdlLzIwMTYvMDcv/d2l0Y2hlci0zLXdp/bGQtaHVudC1jYXJh/dHVsYS5qcGc_dGY9/Mzg0MHg"
     },
