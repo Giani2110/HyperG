@@ -1,0 +1,11 @@
+### get
+GET  http://localhost:5000/api/v1/catalog/usergames/1
+### post
+POST http://localhost:5000/api/v1/catalog/addgame
+Content-Type: application/json
+
+{
+  "userId": 2,
+  "gameId": 4,
+  "instaled": true
+}

@@ -40,8 +40,6 @@ function Profile() {
     setError(null);
     setSuccessMessage("");
 
-    console.log(user);
-
     const updatedUser = {
       ...user,
       username,
@@ -50,7 +48,7 @@ function Profile() {
     };
 
     try {
-      const response = await fetch('http://localhost:5000/users/' + user.id, {
+      const response = await fetch('http://localhost:5000/api/v1/catalog/profile/' + user.id, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

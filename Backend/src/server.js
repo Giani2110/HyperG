@@ -9,6 +9,7 @@ import morgan from "morgan";
 import path from "path";
 
 import { authRouter } from "./routes/authRoutes.js";
+import { clientRouter } from "./routes/clientRoutes.js";
 
 const app = express();
 
@@ -20,6 +21,8 @@ app.use(morgan("dev"));
 app.use(express.static(path.resolve(dirname, "../public")));
 
 app.use(`${API_PREFIX}/auth`, authRouter);
+app.use(`${API_PREFIX}/catalog`, clientRouter);
+
 
 app.listen(5000, () => {
   console.log(`Server running on http://localhost:5000`);

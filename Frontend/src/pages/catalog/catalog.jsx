@@ -12,26 +12,19 @@ function Catalog() {
   const [search, setSearch] = useState("");
   const [genre, setGenre] = useState("");
   const [platform, setPlatform] = useState("");
-  const { addLibraryGame } = useAuth();
+  const { user } = useAuth();
   const [price, setPrice] = useState("");
-  const [userLibrary, setUserLibrary] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/games")
-      .then(response => setGames(response.data))
+    axios.get("http://localhost:5000/api/v1/catalog/") // Cambia la URL según tu backend
+      .then(response => setGames(response.data.games))
       .catch(error => console.error("Error al obtener los juegos:", error));
-
-    const userId = user.id;
-    axios.get(`http://localhost:5000/users/${userId}`)
-      .then(response => setUserLibrary(response.data.library))
-      .catch(error => console.error("Error al obtener la biblioteca del usuario:", error));
-  }, []);
+  }, [user]);
 
   const handleSearchChange = (e) => setSearch(e.target.value);
   const handleGenreChange = (e) => setGenre(e.target.value);
   const handlePlatformChange = (e) => setPlatform(e.target.value);
   const handlePriceChange = (e) => setPrice(e.target.value);
-  const { user } = useAuth();
 
   const handleClearFilters = () => {
     setSearch("");
@@ -57,12 +50,8 @@ function Catalog() {
 
     try {
       const userId = user.id;
-      const updatedLibrary = [...userLibrary, game];
-      addLibraryGame(game);
 
-      await axios.patch(`http://localhost:5000/users/${userId}`, { library: updatedLibrary });
-
-      setUserLibrary(updatedLibrary);
+      await axios.post(`http://localhost:5000/api/v1/catalog/addgame`, { userId, gameId: game.id, instaled: false });
 
       Swal.fire({
         title: 'Compra Exitosa!',
@@ -72,16 +61,30 @@ function Catalog() {
         color: '#ffffff',
       });
     } catch (error) {
-      console.error("Error al realizar la compra:", error);
       Swal.fire({
         title: 'Error',
-        text: 'Hubo un error al realizar la compra. Por favor, inténtelo nuevamente.',
+        text: error.response.data.message || 'Hubo un error al realizar la compra. Por favor, inténtelo nuevamente.',
         icon: 'error',
         background: '#2d2d2d',
         color: '#ffffff',
       });
     }
   };
+
+  // Filtrar los juegos por criterios
+  const filteredGames = games.filter(game => {
+    return (
+      (search === "" || game.title.toLowerCase().includes(search.toLowerCase())) &&
+      (genre === "" || game.genre === genre) &&
+      (platform === "" || game.platform === platform) &&
+      (price === "" || (
+        (price === "0-0" && parseFloat(game.price) === 0) || // Filtrar juegos gratis
+        (price === "0-20" && parseFloat(game.price) <= 20) || // Juegos hasta 20
+        (price === "20-50" && parseFloat(game.price) > 20 && parseFloat(game.price) <= 50) || // Juegos entre 20 y 50
+        (price === "50+" && parseFloat(game.price) > 50) // Juegos más de 50
+      ))
+    );
+  });
 
   return (
     <div className="bg-gray-900 min-h-screen py-8" style={{ marginTop: "80px" }}>
@@ -92,7 +95,7 @@ function Catalog() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
         >
-          Catálogo de Juegos de {user.username}
+          Catálogo de Juegos de {user ? user.username : 'Cargando...'}
         </motion.h4>
 
         <div className="flex gap-8">
@@ -181,72 +184,43 @@ function Catalog() {
             </div>
           </motion.div>
 
-          <div className="flex-grow ">
-            <div className="space-y-8 ">
-              {games
-                .filter(game => {
-                  return (
-                    (search === "" || game.title.toLowerCase().includes(search.toLowerCase())) &&
-                    (genre === "" || game.genre === genre) &&
-                    (platform === "" || game.platform === platform) &&
-                    (price === "" || (
-                      (price === "0-0" && game.price === "Free") ||
-                      (price === "0-20" && parseFloat(game.price.slice(1)) <= 20) ||
-                      (price === "20-50" && parseFloat(game.price.slice(1)) > 20 && parseFloat(game.price.slice(1)) <= 50) ||
-                      (price === "50+" && parseFloat(game.price.slice(1)) > 50)
-                    ))
-                  );
-                })
-                .map((game) => {
-                  const isOwned = userLibrary.some(libGame => libGame.id === game.id);
-
-                  return (
-                    <motion.div
-                      key={game.id}
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.4 }}
-                      className="bg-gray-800 hover:bg-gray-700 transition-colors duration-300 text-white p-6 rounded-md shadow-lg"
-                    >
-                      <div className="flex flex-col md:flex-row items-center justify-between space-x-4">
-                        <img className="w-full md:w-1/3 h-60 object-cover rounded-md" src={game.img} alt={game.title} />
-                        <motion.div
-                          className="flex flex-col justify-between w-full"
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          transition={{ duration: 0.5 }}
+          <div className="flex-grow">
+            <div className="space-y-8">
+              {filteredGames.map((game) => {
+                return (
+                  <motion.div
+                    key={game.id}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.4 }}
+                    className="bg-gray-800 hover:bg-gray-700 transition-colors duration-300 text-white p-6 rounded-md shadow-lg"
+                  >
+                    <div className="flex flex-col md:flex-row items-center justify-between space-x-4">
+                      <img className="w-full md:w-1/3 h-60 object-cover rounded-md" src={game.img} alt={game.title} />
+                      <motion.div
+                        className="flex flex-col justify-between w-full"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.5 }}
+                      >
+                        <h5 className="text-white font-semibold text-xl">{game.title}</h5>
+                        <div className="text-gray-400 text-sm">
+                          <span className="block">Género: {game.genre}</span>
+                          <span className="block">Plataforma: {game.platform}</span>
+                        </div>
+                        <span className="text-green-500 font-bold mt-2">{game.price}</span>
+                        <span className="text-gray-400 text-sm mt-2"> Calificación: {game.rating} / 5 <FontAwesomeIcon icon={faStar} /></span>
+                        <button
+                          onClick={() => handleBuyGame(game)}
+                          className="mt-4 py-2 px-4 text-sm rounded-md bg-green-600 hover:bg-green-700"
                         >
-                          <h5 className="text-white font-semibold text-xl">{game.title}</h5>
-                          <div className="text-gray-400 text-sm">
-                            <span className="block">Género: {game.genre}</span>
-                            <span className="block">Plataforma: {game.platform}</span>
-                          </div>
-                          <span className="text-green-500 font-bold mt-2">{game.price}</span>
-                          <span className="text-gray-400 text-sm mt-2"> Calificación: {game.rating} / 5 <FontAwesomeIcon icon={faStar} /></span>
-                          <button
-                            onClick={() => handleBuyGame(game)}
-                            disabled={isOwned}
-                            className={`${isOwned ? 'bg-gray-600 cursor-not-allowed' : 'bg-green-600 hover:bg-green-700'
-                              } text-white py-2 px-4 mt-4 rounded-md text-sm transition duration-300 flex items-center justify-between ml-auto`}
-                            style={{ minWidth: '120px' }} 
-                          >
-                            {isOwned ? (
-                              <>
-                                <span>En Biblioteca</span>
-                                <FontAwesomeIcon icon={faShoppingCart} className="ml-2" />
-                              </>
-                            ) : (
-                              <>
-                                <span>{game.price}</span>
-                                <FontAwesomeIcon icon={faShoppingCart} className="ml-2" />
-                              </>
-                            )}
-                          </button>
-                        </motion.div>
-                      </div>
-                    </motion.div>
-                  );
-                })}
+                          Comprar
+                        </button>
+                      </motion.div>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </div>

@@ -20,24 +20,25 @@ model User {
   type      UserRole
   library   Library[]
 }
-
 model Library {
   id        Int     @id @default(autoincrement())
   userId    Int
   gameId    Int
   instaled  Boolean
   user      User    @relation(fields: [userId], references: [id])
+  game      Games   @relation(fields: [gameId], references: [id])
 }
 
 model Games {
-  id        Int     @id @default(autoincrement())
+  id        Int      @id @default(autoincrement())
   title     String
   genre     String
-  price     Float
+  price     String
   rating    Float
   platform  String
   img       String
   createdAt DateTime @default(now())
+  library   Library[]
 }
 
 enum UserRole {
