@@ -3,7 +3,6 @@
 
 // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
@@ -18,31 +17,26 @@ model User {
   username  String
   email     String   @unique
   password  String
-  type      UserRole   
+  type      UserRole
   library   Library[]
 }
 
 model Library {
   id        Int     @id @default(autoincrement())
-  title     String
-  genre     String
-  price     String
-  rating    Float
-  platform  String
-  img       String
-  installed Boolean @default(false)
   userId    Int
+  gameId    Int
+  instaled  Boolean
   user      User    @relation(fields: [userId], references: [id])
 }
 
 model Games {
-  id       Int     @id @default(autoincrement())
-  title    String
-  genre    String
-  price    String
-  rating   Float
-  platform String
-  img      String
+  id        Int     @id @default(autoincrement())
+  title     String
+  genre     String
+  price     Float
+  rating    Float
+  platform  String
+  img       String
   createdAt DateTime @default(now())
 }
 

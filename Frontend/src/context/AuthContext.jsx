@@ -44,7 +44,11 @@ export const AuthProvider = ({ children }) => {
       setIsAuthenticated(true);
       localStorage.setItem('token', data.token);
       toast.success("¡Inicio de sesión exitoso!");
-      navigate('/catalog');
+      if (decodedToken.type === 'client') {
+        navigate('/catalog');
+      } else if (decodedToken.type === 'admin') {
+        navigate('/dashboard');
+      }
     } else {
       toast.error(data.message || "Error al iniciar sesión");
     }
