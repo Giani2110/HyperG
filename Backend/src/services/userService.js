@@ -2,15 +2,28 @@ import { prisma } from "../providers/prisma.js";
 
 export class UserService {
   static async getAllUsers() {
-    return await prisma.user.findMany({
-      select: {
-        id: true,
-        username: true,
-        email: true,
-        type: true,
-        password: false,
-      },
-    });
+    try {
+      const users = await prisma.user.findMany({
+        include: {
+          library: {
+            include: {
+              game: true
+            }
+          }
+        }
+      });
+
+      return users.map(user => ({
+        ...user,
+        library: user.library.map(item => ({
+          title: item.game.title,
+          price: item.game.price
+        }))
+      }));
+    } catch (error) {
+      console.error("Error al obtener usuarios:", error);
+      throw error;
+    }
   }
 
   static async getByEmail(email) {
@@ -66,11 +79,33 @@ export class UserService {
     });
   }
 
-  static async delete({ id }) {
-    return prisma.user.delete({
-      where: {
-        id: id,
-      },
-    });
+  static async updateUserRole(userId, newRole) {
+    try {
+      const updatedUser = await prisma.user.update({
+        where: { id: parseInt(userId) },
+        data: { type: newRole }
+      });
+      return updatedUser;
+    } catch (error) {
+      console.error("Error al actualizar el rol:", error);
+      throw error;
+    }
+  }
+
+  static async deleteUser(userId) {
+    try {
+      await prisma.library.deleteMany({
+        where: { userId: parseInt(userId) }
+      });
+
+      const deletedUser = await prisma.user.delete({
+        where: { id: parseInt(userId) }
+      });
+
+      return deletedUser;
+    } catch (error) {
+      console.error("Error al eliminar usuario:", error);
+      throw error;
+    }
   }
 }
