@@ -58,4 +58,27 @@ export class AdminController {
             });
         }
     }
+
+    static async createGame(req, res) {
+        try {
+            const gameData = req.body;
+
+            if (!gameData || !gameData.title || !gameData.genre || !gameData.price || !gameData.rating || !gameData.platform || !gameData.img) {
+                return res.status(400).json({ message: "Faltan datos para crear el juego." });
+            }
+
+            const newGame = await adminService.createGame(gameData);
+
+            return res.status(201).json({
+                message: "Juego creado exitosamente",
+                game: newGame
+            });
+        } catch (error) {
+            console.error("Error al crear el juego:", error);
+            return res.status(500).json({ 
+                message: "Error interno del servidor", 
+                error: error.message 
+            });
+        }
+    }
 }

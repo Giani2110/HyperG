@@ -41,4 +41,23 @@ export class adminService {
             throw error;
         }
     }
+
+    static async createGame(gameData) {
+        try {
+            const newGame = await prisma.games.create({
+                data: {
+                    title: gameData.title,
+                    genre: gameData.genre,
+                    platform: gameData.platform,
+                    price: gameData.price,
+                    rating: parseFloat(gameData.rating),
+                    img: gameData.img,
+                }
+            });
+            return newGame;
+        } catch (error) {
+            console.error("Error al crear el juego:", error);
+            throw error;
+        }
+    }
 }

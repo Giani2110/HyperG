@@ -29,7 +29,7 @@ function AddGames() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     if (!game.title || !game.genre || !game.price || !game.rating || !game.platform || !game.img) {
       toast.error("Por favor, complete todos los campos.", {
         position: "top-right",
@@ -37,17 +37,12 @@ function AddGames() {
       });
       return;
     }
-
+  
     try {
-      const response = await axios.get("http://localhost:5000/games");
-      const lastGame = response.data[response.data.length - 1];
-      const newId = lastGame ? parseInt(lastGame.id) + 1 : 1;
-
-      await axios.post("http://localhost:5000/games", {
+      await axios.post("http://localhost:5000/api/v1/admin/creategame", {
         ...game,
-        id: newId.toString(),
       });
-
+  
       setGame({
         title: "",
         genre: "",
@@ -56,7 +51,7 @@ function AddGames() {
         platform: "",
         img: "",
       });
-
+  
       toast.success("Juego agregado correctamente.", {
         position: "top-right",
         autoClose: 5000,
