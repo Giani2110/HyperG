@@ -9,6 +9,5 @@ clientRouter.get("/usergames/:id", ClientController.getUserGames);
 clientRouter.post("/addgame", ClientController.addGame);
 clientRouter.post("/install", ClientController.installGame);
 clientRouter.post("/uninstall", ClientController.uninstallGame);
-clientRouter.put("/profile/:id", ClientController.updateProfile);
 
 export { clientRouter };

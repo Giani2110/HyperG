@@ -120,18 +120,4 @@ export class ClientController {
       return res.status(500).json({ message: "Error interno del servidor" });
     }
   }
-
-  static async updateProfile(req, res) {
-    const { id } = req.user;
-    const { username, email, password } = req.body;
-
-    try {
-      const updatedUser = await UserService.update({ id, username, email, password });
-      res.status(200).json({ message: 'Perfil actualizado correctamente', user: updatedUser });
-    } catch (error) {
-      res.status(400).json({ message: error.message });
-    }
-  }
 }
-
-  

@@ -55,7 +55,5 @@ export class clientService {
             console.error("Error al obtener los juegos del usuario:", error);
             return [];
         }
-    }
-
-    
+    }   
 }

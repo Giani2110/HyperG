@@ -10,6 +10,7 @@ import path from "path";
 
 import { authRouter } from "./routes/authRoutes.js";
 import { clientRouter } from "./routes/clientRoutes.js";
+import { adminRouter } from "./routes/adminRoutes.js";
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.use(express.static(path.resolve(dirname, "../public")));
 
 app.use(`${API_PREFIX}/auth`, authRouter);
 app.use(`${API_PREFIX}/catalog`, clientRouter);
+app.use(`${API_PREFIX}/admin`, adminRouter);
 
 
 app.listen(5000, () => {
