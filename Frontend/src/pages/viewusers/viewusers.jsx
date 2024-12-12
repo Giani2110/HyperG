@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Swal from "sweetalert2";
 import axios from "axios";
+import { useAuth } from "../../context/AuthContext";
 import { Button, Typography, Card, CardContent, CardActions, IconButton } from "@mui/material";
 import { PersonAdd, Delete, Edit, ShoppingCart } from "@mui/icons-material";
 
 function ViewUsers() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { user } = useAuth();
 
   useEffect(() => {
     fetchUsers();
@@ -16,11 +18,11 @@ function ViewUsers() {
   const fetchUsers = async () => {
     try {
       const response = await axios.get("http://localhost:5000/api/v1/admin/users");
-      setUsers(response.data);
-      setLoading(false);
+      const loggedInUserId = user.id;
+      const filteredUsers = response.data.filter(user => user.id !== loggedInUserId);
+      setUsers(filteredUsers);
     } catch (error) {
       console.error("Error al obtener los usuarios:", error);
-      setLoading(false);
       Swal.fire({
         title: "Error",
         text: "No se pudieron cargar los usuarios",
@@ -28,6 +30,8 @@ function ViewUsers() {
         background: "#1f2937",
         color: "#ffffff",
       });
+    } finally {
+      setLoading(false);
     }
   };
 
